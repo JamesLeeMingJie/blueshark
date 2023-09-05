@@ -1,0 +1,20 @@
+@media screen and (max-width: 9999px) {
+  .bikeQuote {
+    padding-top: 5%;
+  }
+  .bike {
+    left: -25rem;
+    top: 1rem;
+  }
+}
+/* 
+@media screen and (max-width: 1420px) {
+  .bikeQuote {
+    margin-top: 40rem;
+    padding-top: 15%;
+  }
+  .bike {
+    left: 10%;
+    top: -25rem;
+  }
+} */

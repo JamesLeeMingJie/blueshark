@@ -1,0 +1,16 @@
+{
+  "header": {
+    "home":"ms-Home",
+    "rSeries":"ms-R Series",
+    "video":"ms-Video",
+    "subscriptions":"ms-Subscriptions",
+    "news":"ms-News",
+    "aboutUs":"ms-About Us",
+    "aboutBlueshark":"ms-About Blueshark Asean",
+    "termsConditions":"ms-Terms & Conditions",
+    "faq":"ms-FAQ",
+    "contact":"ms-Contact Us",
+    "help":"ms-Help",
+    "policy":"Privacy Policy"
+  }
+}

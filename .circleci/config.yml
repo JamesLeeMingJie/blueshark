@@ -1,0 +1,143 @@
+version: 2
+
+jobs:
+  build&pushimage:
+    environment:
+      PROJECT: swr.my-kualalumpur-1.alphaedge.tmone.com.my/dev_ecommerce/dev-fe-user
+    executor: docker/docker
+    machine:
+      - image: ubuntu-2004:2022.07.1
+    steps:
+      - checkout
+      - run:
+          name: commit hash
+          command: echo 'export IMAGE_TAG=$(echo $CIRCLE_SHA1 | cut -c 1-8)' >> $BASH_ENV
+      - run:
+          name: set up .env file
+          command: cp .env.local .env
+      - run:
+          name: build the docker image
+          command: docker build . -t $PROJECT:latest
+      - run:
+          name: login to swr
+          command: docker login -u my-kualalumpur-1@$DOCKER_USER -p $DOCKER_PASSWORD swr.my-kualalumpur-1.alphaedge.tmone.com.my
+      - run:
+          name: tag the image with swr repo name
+          command: docker tag ${PROJECT}:latest ${PROJECT}:${IMAGE_TAG}
+      - run:
+          name: push the image the ecr repo
+          command: docker push ${PROJECT}:latest
+      - run:
+          name: push the image the ecr repo
+          command: docker push ${PROJECT}:${IMAGE_TAG}
+
+  build&pushimage-prod:
+    environment:
+      PROJECT: swr.my-kualalumpur-1.alphaedge.tmone.com.my/prod_ecommerce/prod-fe-user
+    executor: docker/docker
+    machine:
+      - image: ubuntu-2004:2022.07.1
+    steps:
+      - checkout
+      - run:
+          name: commit hash
+          command: echo 'export IMAGE_TAG=$(echo $CIRCLE_SHA1 | cut -c 1-8)' >> $BASH_ENV
+      - run: 
+          name: set up .env file 123
+          command: echo $ENV_PROD | base64 -d > .env
+      - run:
+          name: build the docker image
+          command: docker build . -t $PROJECT:latest
+      - run:
+          name: login to swr
+          command: docker login -u my-kualalumpur-1@$DOCKER_USER -p $DOCKER_PASSWORD swr.my-kualalumpur-1.alphaedge.tmone.com.my
+      - run: 
+          name: tag the image with swr repo name 
+          command: docker tag ${PROJECT}:latest ${PROJECT}:${IMAGE_TAG}
+      - run: 
+          name: push the image the ecr repo
+          command: docker push ${PROJECT}:latest
+      - run: 
+          name: push the image the ecr repo
+          command: docker push ${PROJECT}:${IMAGE_TAG}
+  
+  deploy:
+    machine:
+      - image: ubuntu-2004:2022.07.1
+    steps:
+      - checkout
+      - run:
+          name: commit hash
+          command: echo 'export IMAGE_TAG=$(echo $CIRCLE_SHA1 | cut -c 1-8)' >> $BASH_ENV
+      - run:
+          name: install and confgure kubectl
+          command: curl -LO https://dl.k8s.io/release/v1.23.6/bin/linux/amd64/kubectl  && sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+      - run:
+          name: setup the kubeconfig file
+          command: mkdir ~/.kube && echo "${KUBE_CONFIG}" > ~/.kube/kubeconfig.json && export KUBECONFIG=~/.kube/kubeconfig.json && kubectl get ns -A
+      - run:
+          name: install and configuire helm
+          command: wget https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz  && tar -zxvf helm-v3.8.0-linux-amd64.tar.gz && sudo mv linux-amd64/helm /usr/local/bin/helm
+      # - run:
+      #     name: initialize helm
+      #     command: sed -i -e "s+image_tag+${IMAGE_TAG}+g" cicd/dev-fe-user/values.yaml && cat cicd/dev-fe-user/values.yaml
+      # - run:
+      #     name:  helm upgrade
+      #     command:  export KUBECONFIG=~/.kube/kubeconfig.json && helm ls -n uat && helm upgrade --install dev-fe-user cicd/dev-fe-user/ -n uat --wait
+      - run:
+          name: initialize helm
+          command: sed -i -e "s+image_tag+${IMAGE_TAG}+g" cicd/dev-fe-user-test/values.yaml && cat cicd/dev-fe-user-test/values.yaml
+      - run:
+          name: helm upgrade
+          command: export KUBECONFIG=~/.kube/kubeconfig.json && helm ls -n uat && helm upgrade --install dev-fe-user-test cicd/dev-fe-user-test/ -n uat --wait
+  deploy_prod:
+    machine:
+      - image: ubuntu-2004:2022.07.1
+    steps:
+      - checkout
+      - run:
+          name: commit hash
+          command:  echo 'export IMAGE_TAG=$(echo $CIRCLE_SHA1 | cut -c 1-8)' >> $BASH_ENV
+      - run:
+          name: install and confgure kubectl
+          command: curl -LO https://dl.k8s.io/release/v1.23.6/bin/linux/amd64/kubectl  && sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+      - run:
+          name: setup the kubeconfig file 
+          command: mkdir ~/.kube && echo "${KUBE_CONFIG_PROD}" > ~/.kube/kubeconfig.json && export KUBECONFIG=~/.kube/kubeconfig.json && kubectl get ns -A
+      - run:
+          name: install and configuire helm
+          command: wget https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz  && tar -zxvf helm-v3.8.0-linux-amd64.tar.gz && sudo mv linux-amd64/helm /usr/local/bin/helm
+      - run:
+          name: Sed image tag
+          command: sed -i -e "s+image_tag+${IMAGE_TAG}+g" cicd/dev-fe-user/values-prod.yaml && cat cicd/dev-fe-user/values-prod.yaml
+      - run:
+          name:  helm upgrade
+          command: export KUBECONFIG=~/.kube/kubeconfig.json && helm ls -n prod && helm upgrade --install -f cicd/dev-fe-user/values-prod.yaml fe-user cicd/dev-fe-user/ --wait  -n prod
+workflows:
+  version: 2
+  primary:
+    jobs:
+      - build&pushimage:
+          filters:
+            branches:
+              only:
+                - develop
+      - deploy:
+          requires:
+            - build&pushimage
+          filters:
+            branches:
+              only:
+                - develop
+      - build&pushimage-prod:
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_prod:
+          requires:
+           - build&pushimage-prod
+          filters:
+            branches:
+              only:
+                - main 

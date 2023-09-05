@@ -1,0 +1,83 @@
+/** @type {import('tailwindcss').Config} */
+
+module.exports = {
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    // fontSize: {
+    //   base: '1.6rem',
+    //   title: '4.8rem',
+    //   h1: '3.5rem',
+    //   h2: '3.6rem',
+    //   h3: '2.0rem',
+    //   body1: '3.0rem',
+    //   body2: '2.2rem',
+    // },
+    extend: {
+      backgroundImage: {
+        'home-intro': "url('/images/home/home-intro.webp')",
+        'home-about': "url('/images/home/about.webp')",
+        'about-us-intro': "url('/images/about-us/about-us-intro.webp')",
+        'about-us-driving': "url('/images/about-us/driving.webp')",
+        'about-us-terms': "url('/images/about-us/terms.webp')",
+        'about-us-faq': "url('/images/about-us/faq.webp')",
+        'about-us-help': "url('/images/about-us/help.webp')",
+        'about-us-contact': "url('/images/about-us/contact.webp')",
+        'about-us-contact2': "url('/images/about-us/contact2.webp')",
+        'about-us-mobile': "url('/images/about-us/about-mobile.webp')",
+        'about-terms-mobile': "url('/images/about-us/terms-mobile.webp')",
+      },
+      boxShadow: {
+        lb: '-15px 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);',
+        rb: '15px 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);',
+      },
+      flex: {
+        0.5: '0.5 0.5 0%',
+        2: '2 2 0%',
+        3: '3 3 0%',
+        4: '4 4 0%',
+        5: '5 5 0%',
+        6: '6 6 0%',
+        7: '7 7 0%',
+        8: '8 8 0%',
+        9: '9 9 0%',
+        10: '10 10 0%',
+        11: '11 11 0%',
+        12: '12 12 0%',
+      },
+      screens: {
+        sm: '320px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        '3xl': '1636px',
+      },
+      colors: {
+        'white-10': 'rgba(255, 255, 255, 0.1)',
+        'white-15': 'rgba(255, 255, 255, 0.15)',
+        blue: '#38BDF8',
+        red: '#FF6150',
+        green: '#73C496',
+        yellow: '#F7D567',
+        gray: {
+          100: '#B1B5C3',
+          300: '#767F8F',
+          500: '#606774',
+          700: '#2F3C51',
+          900: '#202633',
+        },
+        gray_1: '#949494',
+        gray_2: '#D0D0D0',
+        primary: '#30629F',
+      },
+      // fontFamily: {
+      //   sans: ['Roboto', 'sans-serif'],
+      // },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
+};

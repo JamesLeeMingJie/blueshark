@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "id": 4,
+      "dealer": "Mr Kenno",
+      "company_name": [
+        "Kedai Motorsikal Tenaga SB (Bangi)"
+      ],
+      "location": [
+        ""
+      ],
+      "contact_no": "03-8725 0362",
+      "workshop": "yes",
+      "test_ride": "yes",
+      "state": "SELANGOR"
+    },
+    {
+      "id": 8,
+      "dealer": "Mr. Lai",
+      "company_name": [
+        "GS Cycle Sdn. Bhd. (Klang)"
+      ],
+      "location": [
+        "https://goo.gl/maps/UTVj591ppii2YZiZA"
+      ],
+      "contact_no": [
+        "03-6140 1524"
+      ],
+      "workshop": "yes",
+      "test_ride": "yes",
+      "state": "SELANGOR"
+    },
+    {
+      "id": 9,
+      "dealer": "Mr. Lai",
+      "company_name": [
+        "GS Cycle Sdn. Bhd. (Setapak)"
+      ],
+      "location": [
+        "https://goo.gl/maps/VHUtoBsRtwM8X3Mw6"
+      ],
+      "contact_no": [
+        "03-6140 1524"
+      ],
+      "workshop": "yes",
+      "test_ride": "yes",
+      "state": "WP KUALA LUMPUR"
+    },
+    {
+      "id": 12,
+      "dealer": "Mr. Jeffrey Ng",
+      "company_name": [
+        "NKS Motorsport SB"
+      ],
+      "location": [
+        ""
+      ],
+      "contact_no": "03-7972 1452",
+      "workshop": "yes",
+      "test_ride": "no"
+    }
+  ]
+}

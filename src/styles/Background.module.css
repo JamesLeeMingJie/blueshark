@@ -1,0 +1,122 @@
+/* Home page - homeBackground */
+/* About Us page - aboutBackground */
+/* Smart Energy page - batteryBackground */
+/* Pricing page - pricingBackground */
+
+.homeBackground {
+  background: url('../../public/background/home-bg.png');
+  background-position: center;
+  background-size: cover;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .aboutBackground {
+    background: url('../../public/background/about-bg-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .batteryBackground {
+    background: url('../../public/background/battery-bg-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .pricingBackground {
+    background: url('../../public/background/pricing-bg-mobile.png');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .blueSharkBackground {
+    background: url('../../public/background/blueshark-mobileBg.png');
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* ipad/tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .aboutBackground {
+    background: url('../../public/background/about-bg-tablet.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .batteryBackground {
+    background: url('../../public/background/battery-bg-tablet.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .pricingBackground {
+    background: url('../../public/background/pricing-bg-tablet.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .blueSharkBackground {
+    background: url('../../public/background/blueshark-bg.png');
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1024px) {
+  .aboutBackground {
+    background: url('../../public/background/about-bg.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .batteryBackground {
+    background: url('../../public/background/battery-bg.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .pricingBackground {
+    background: url('../../public/background/pricing-bg.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .blueSharkBackground {
+    background: url('../../public/background/blueshark-bg.png');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cimbBackground::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to top, #06060600, rgba(255, 255, 255, 0.839)), url('../../public/background/cimb-bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    mix-blend-mode: multiply;
+    z-index: -10;
+  }
+
+  .cimbBackground::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, #06060600, #fff);
+  }
+}
+
+.articleBackground {
+  background: url('../../public/background/blueshark-article.png');
+  background-position: top;
+  background-size: cover;
+}

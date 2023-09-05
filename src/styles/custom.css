@@ -1,0 +1,170 @@
+/***** Navbar *****/
+.home__navText {
+  color: black;
+}
+
+.parentNav:hover .home__navText {
+  transition: 0.5s ease;
+  color: white;
+}
+
+.contact__navText {
+  transition: 0.5s ease;
+  color: white;
+}
+
+.contact__navText:hover {
+  color: black !important;
+}
+
+/***** Homepage *****/
+.home-title {
+  font-size: clamp(3.0rem, 2.8vw, 4.0rem);
+}
+
+.home-sub-title {
+  font-size: clamp(2.2rem, 2.3vw, 3.6rem);
+  font-weight: 700;
+}
+
+.home-tertiary-title {
+  font-size: clamp(1.6rem, 1.7vw, 1.8rem);
+  color: #666666;
+}
+
+.home-promotion-text {
+  font-size: clamp(1.8rem, 2.3vw, 2.0rem);
+  color: #30629F;
+}
+
+.inline-icons {
+  margin-left: 1rem;
+}
+
+.inline-icons svg {
+  display: inline;
+  margin-bottom: 2rem;
+}
+
+/***** Pricing *****/
+@media screen and (min-width: 480px) {
+  .mobileOnly {
+    display: none;
+  }
+}
+
+/***** Contact Us *****/
+.tableRow {
+  padding: 2rem 0 2rem 1rem;
+  height: fit-content;
+}
+
+.tableRow:nth-child(odd) {
+  background-color: #FBF5FF;
+}
+
+.remove-thumb-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-dealership-name {
+  font-size: clamp(1.6rem, 2.3vw, 2.0rem);
+  font-weight: 800;
+  color: #30629F;
+}
+
+/***** Utilities *****/
+
+/* Fonts */
+.text-title {
+  font-size: clamp(3.4rem, 2.8vw, 4.4rem);
+  font-weight: 700;
+  /* color: #30629F; */
+}
+
+.text-h2 {
+  font-size: clamp(2.6rem, 2.3vw, 3.0rem);
+  font-weight: 700;
+  /* color: #30629F; */
+}
+
+.text-h3 {
+  font-size: clamp(2.0rem, 2.3vw, 2.4rem);
+  font-weight: 600;
+  color: #30629F;
+}
+
+.text-h3-white {
+  font-size: clamp(2.0rem, 2.3vw, 2.4rem);
+  font-weight: 600;
+  color: white;
+}
+
+.text-h4 {
+  font-size: clamp(1.8rem, 2.3vw, 2.0rem);
+  font-weight: 600;
+}
+
+.text-h4-blue {
+  font-size: clamp(1.8rem, 2.3vw, 2.0rem);
+  font-weight: 600;
+  color: #30629F;
+}
+
+.text-number {
+  /* Previously 25rem to 30rem */
+  font-size: clamp(22rem, 18vw, 28rem);
+}
+
+.text-body1 {
+  font-size: clamp(1.8rem, 1.7vw, 2.0rem);
+  font-weight: 300;
+  color: #666666;
+}
+
+.text-body1-white {
+  font-size: clamp(1.8rem, 2.2vw, 2.0rem);
+  font-weight: 300;
+  color: white;
+}
+
+.text-body2 {
+  font-size: clamp(1.6rem, 2.3vw, 1.8rem);
+  font-weight: 300;
+  color: #666666;
+}
+
+.text-body2-white {
+  font-size: clamp(1.6rem, 2.3vw, 1.8rem);
+  font-weight: 300;
+  color: white;
+}
+
+.text-body3 {
+  font-size: clamp(1.5rem, 2.3vw, 1.6rem);
+  font-weight: 300;
+  color: #666666;
+}
+
+.text-body3-white {
+  font-size: clamp(1.5rem, 2.3vw, 1.6rem);
+  font-weight: 300;
+  color: white;
+}
+
+.text-nav-white {
+  font-size: clamp(0.5rem, 1.2vw, 1.6rem);
+  font-weight: 500;
+  color: white;
+}
+
+.text-body4 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  /* color: #666666; */
+}
+
+.text-base {
+  font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+  /* font-weight: 700; */
+}

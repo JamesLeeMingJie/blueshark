@@ -1,0 +1,15 @@
+{
+  "policy":
+  {
+    "privacyNotice":"PRIVACY NOTICE",
+    "Last-updated":"Last updated on 5th October 2022",
+    "text-policy":"Blueshark Ecosystem Sdn. Bhd. and/or any of its subsidiaries, related companies, associates, affiliates,jointly controlled entities, shareholders and any other entities within the group (“Blueshark”, “we” or us”)value and respect the privacy rights of all our customers across all aspects of our business and we strive  to protect your Personal Data in compliance with the laws of Malaysia. Therefore, we strongly encourage you to read this Privacy Notice (“Notice”) carefully to understand our policies and practices regarding yourPersonal Data and how we will treat it. In essence, this Notice explains",
+    "text-list":{
+      "text-list1":"1. The Personal Data that we collect about you;",
+      "text-list2":"2. How we collect your Personal Data;",
+      "text-list3":"3. How we use your Personal Data;",
+      "text-list4":"4. Disclosure of your Personal Data; and",
+      "text-list5":"5. Your Right."
+    }
+  }
+}
