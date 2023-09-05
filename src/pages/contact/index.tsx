@@ -27,13 +27,23 @@ import { TiTick } from 'react-icons/ti';
 // Data
 import dealerData from '../../lib/dealer.json';
 
-// console.log(
-//   dealerData.data.forEach(function (company) {
-//     return company.company_name;
-//   }),
-// );
-
 const ContactPage: NextPage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredData, setFilteredData] = useState(dealerData.data);
+
+  const handleInputChange = (event: any) => {
+    const { value } = event.target;
+    setSearchTerm(value);
+    filteringData(value);
+  };
+
+  const filteringData = (input: any) => {
+    const newData = dealerData.data.filter((item) => {
+      return item.company_name.toLowerCase().includes(input.toLowerCase());
+    });
+    setFilteredData(newData);
+  };
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
@@ -207,6 +217,8 @@ const ContactPage: NextPage = () => {
           <input
             className="text-base shadow-lg p-4 mb-4 border-primary border-[1.5px] rounded-[8px]"
             placeholder="Enter keyword here..."
+            value={searchTerm}
+            onChange={handleInputChange}
           />
           {/* <p className="lg:text-[28px] sm:text-[20px] font-semibold text-black">Where to find us?</p> */}
         </div>
@@ -344,7 +356,7 @@ const ContactPage: NextPage = () => {
         </div> */}
 
         <div className="mx-auto w-10/12 md:w-8/12 bg-[#F6F6F6] p-8 h-[450px] overflow-y-auto">
-          {dealerData.data.map(function (item) {
+          {filteredData.map(function (item) {
             return (
               <div key={item.id} className="border-b-[2px] pb-4 mb-8 px-2">
                 <p className="leading-none pb-4 text-dealership-name">{item.company_name}</p>
@@ -366,6 +378,29 @@ const ContactPage: NextPage = () => {
               </div>
             );
           })}
+
+          {/* {dealerData.data.map(function (item) {
+            return (
+              <div key={item.id} className="border-b-[2px] pb-4 mb-8 px-2">
+                <p className="leading-none pb-4 text-dealership-name">{item.company_name}</p>
+                <a href={`${item.location}`}>
+                  <p className="text-body3 pb-4">{item.address}</p>
+                </a>
+                <p className="text-[16px] pb-4 flex items-center">
+                  <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
+                    <BsTelephone />
+                  </span>
+                  {item.contact_no}
+                </p>
+                <p className="text-[16px] pb-4 flex items-center">
+                  <span className="mr-4 text-primary text-[32px]">
+                    <HiOutlineBuildingStorefront />
+                  </span>
+                  {item.operation_hours}
+                </p>
+              </div>
+            );
+          })} */}
         </div>
       </section>
 

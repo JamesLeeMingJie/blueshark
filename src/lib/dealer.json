@@ -3,9 +3,7 @@
     {
       "id": 1,
       "dealer": "Mr See",
-      "company_name": [
-        "Kien Hing Motors Sdn Bhd"
-      ],
+      "company_name": "Kien Hing Motors Sdn Bhd",
       "address": "310&312, Jalan Pahang, Setapak, 53000 Kuala Lumpur. WP.",
       "location": [
         "https://goo.gl/maps/WiABxpJbEYhetad26"
@@ -19,9 +17,7 @@
     {
       "id": 2,
       "dealer": "Ms Teh",
-      "company_name": [
-        "Takong Sdn Bhd"
-      ],
+      "company_name": "Takong Sdn Bhd",
       "address": "69, Jalan 2/90, Taman Pertama Cheras 56100 Kuala Lumpur, Kuala Lumpur, Malaysia",
       "location": [
         "https://goo.gl/maps/ZPj2BpvA3usaTU1m9"
@@ -35,9 +31,7 @@
     {
       "id": 3,
       "dealer": "Mr Kenno",
-      "company_name": [
-        "Kedai Motorsikal Tenaga Sdn Bhd (Semenyih)"
-      ],
+      "company_name": "Kedai Motorsikal Tenaga Sdn Bhd (Semenyih)",
       "address": "Lot 10, Jalan Sungai Lalang, 43500 Semenyih, Selangor",
       "location": [
         "https://goo.gl/maps/gbf22aYF1yK6Rzja6"
@@ -54,9 +48,7 @@
     {
       "id": 5,
       "dealer": "Mr Kenno",
-      "company_name": [
-        "Kedai Motorsikal Tenaga Sdn Bhd (Puchong)"
-      ],
+      "company_name": "Kedai Motorsikal Tenaga Sdn Bhd (Puchong)",
       "address": "19-G, Jalan BK 6F/3A, Bandar Kinrara, 47180 Puchong, Selangor",
       "location": [
         "https://goo.gl/maps/5jPjEjmu7TwW71HbA"
@@ -70,9 +62,7 @@
     {
       "id": 6,
       "dealer": "Mr. Yim Yen Lin",
-      "company_name": [
-        "Soon Heng Bikers Sdn Bhd"
-      ],
+      "company_name": "Soon Heng Bikers Sdn Bhd",
       "address": "Lot 2790 103 Jalan 1 Kampung Baru Cina Pekan Batu 9 Cheras, Batu 9, 43200 Cheras, Selangor",
       "location": [
         "https://goo.gl/maps/gj4PTj4VG8e5Mesy6"
@@ -86,9 +76,7 @@
     {
       "id": 7,
       "dealer": "Mr. Jimmy",
-      "company_name": [
-        "YS Chong Motor Trd Sdn Bhd"
-      ],
+      "company_name": "YS Chong Motor Trd Sdn Bhd",
       "address": "No.606, Jalan SS9A/13, Seri Setia (Sg. Way)47300 Petaling Jaya, Selangor",
       "location": [
         "https://goo.gl/maps/WYXB4m4FfcthBddK6"
@@ -102,9 +90,7 @@
     {
       "id": 10,
       "dealer": "Mr. Lai",
-      "company_name": [
-        "GS Cycle Sdn. Bhd. (Damansara Damai)"
-      ],
+      "company_name": "GS Cycle Sdn. Bhd. (Damansara Damai)",
       "address": "GF, Jalan PJU 10/28, Vista Shop Damansara Damai, 47830 Petaling Jaya, Selangor",
       "location": [
         "https://goo.gl/maps/QbGR4kmRe6E3UQDZ8"
@@ -118,9 +104,7 @@
     {
       "id": 11,
       "dealer": "Mr. Daniel/ Azrul",
-      "company_name": [
-        "Mentara Farm Village Sdn Bhd"
-      ],
+      "company_name": "Mentara Farm Village Sdn Bhd",
       "address": "PT 2740, Tingkat 1, Wisma Persatuan Jamaan MAsjid al-Quddus, Jln Abdul Kadir Adabi, 15250 Kota Bharu, Kelantan",
       "location": [
         ""
@@ -132,9 +116,7 @@
     {
       "id": 13,
       "dealer": "Mr Chris",
-      "company_name": [
-        "AiHome IOI City Mall"
-      ],
+      "company_name": "AiHome IOI City Mall",
       "address": "L2-209&210, Second Floor, IOI City Mall 2, Lebuh IRC, IOI Resort City, 62502 Sepang, Wilayah Persekutuan Putrajaya",
       "location": [
         "https://goo.gl/maps/1kHNdYYspguW1mMH8"
@@ -148,9 +130,7 @@
     {
       "id": 14,
       "dealer": "KC Chua",
-      "company_name": [
-        "Ah Hong Motor Sdn Bhd"
-      ],
+      "company_name": "Ah Hong Motor Sdn Bhd",
       "address": "No.621, 623,625, Jalan Sentul, Sentul, 51000 Kuala Lumpur",
       "location": [
         "https://www.google.com/maps/dir/3.1416318,101.6954442/3.1742444,101.6924346/@3.1572946,101.6733639,14z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0?entry=ttu"

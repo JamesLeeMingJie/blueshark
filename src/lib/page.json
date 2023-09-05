@@ -627,6 +627,39 @@
         "events"
       ],
       "source": "external"
+    },
+    {
+      "id": "brands__48",
+      "date": "24-07-2023",
+      "month": "july",
+      "img": "/articleImages/2023/july/brands__1.png",
+      "link": "https://theedgemalaysia.com/node/675593",
+      "description": "Game Changer: Banking on swappable batteries to drive EV adoption",
+      "subcategories": [
+        "brand",
+        "products&tech"
+      ],
+      "source": "external"
+    },
+    {
+      "id": "brands__49",
+      "date": "08-08-2023",
+      "month": "august",
+      "img": "/articleImages/2023/august/brands__1.png",
+      "link": "https://www.thestar.com.my/business/business-news/2023/08/08/epmb-blueshark-to-collaborate-with-grab",
+      "description": "EPMB, Blueshark to collaborate with Grab",
+      "subcategories": "brand",
+      "source": "external"
+    },
+    {
+      "id": "brands__50",
+      "date": "08-08-2023",
+      "month": "august",
+      "img": "/articleImages/2023/august/brands__2.jpeg",
+      "link": "https://www.freemalaysiatoday.com/category/business/2023/08/08/epmb-collaborates-with-grab-blueshark-on-green-mobility/",
+      "description": "EPMB collaborates with Grab, Blueshark on green mobility",
+      "subcategories": "brand",
+      "source": "external"
     }
   ],
   "thirdCategory": [
@@ -781,6 +814,19 @@
       "img": "/articleImages/2023/july/products__2.jpg",
       "link": "https://www.tiktok.com/@caricarz/video/7254517287112281346?_d=dcg8f2dfa4le94&_r=1&mid=7254517405177613057&preview_pb=0&region=MY&sec_user_id=MS4wLjABAAAAYKZO609iUD3QS3PpwuQtFHy8u5AFRFdOkJaMcgIrbDjai0cRt-TN7BDDRNLXntc8&share_app_id=1180&share_iid=7254728010925754120&share_item_id=7254517287112281346&share_link_id=f9e12428-05de-43f8-8174-861652cbc1c0&sharer_language=en&social_share_type=0&source=h5_t&timestamp=1689133737&u_code=dcg8f8c0k8bmci&ug_btm=b5836%2Cb2878&ugbiz_name=Main&user_id=6831052251341472769&utm_campaign=client_share&utm_medium=android&utm_source=whatsapp",
       "description": "Blueshark R1 Reviewed | Electric Scooter For The Masses?",
+      "subcategories": [
+        "products&tech",
+        "reviews"
+      ],
+      "source": "external"
+    },
+    {
+      "id": "products__14",
+      "date": "29-07-2023",
+      "month": "july",
+      "img": "/articleImages/2023/july/products__3.png",
+      "link": "https://www.facebook.com/watch/?v=501188205542363&extid=CL-UNK-UNK-UNK-IOS_GK0T-GK1C&mibextid=2Rb1fB&ref=sharing",
+      "description": "A promising electric bike with a combination of traditional bike elements and modern electric technology.",
       "subcategories": [
         "products&tech",
         "reviews"
