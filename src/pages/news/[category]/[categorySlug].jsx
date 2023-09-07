@@ -7,12 +7,13 @@ import Swal from "sweetalert2";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 import { BsLink45Deg, BsFacebook, BsLinkedin, BsTwitter } from 'react-icons/bs';
 
-import relatedArticle1 from '../../../../public/revampImages/related-article1.png';
-import relatedArticle2 from '../../../../public/revampImages/related-article2.png';
-import relatedArticle3 from '../../../../public/revampImages/related-article3.png';
+// import relatedArticle1 from '../../../../public/revampImages/related-article1.png';
+// import relatedArticle2 from '../../../../public/revampImages/related-article2.png';
+// import relatedArticle3 from '../../../../public/revampImages/related-article3.png';
 
 import articleData from '../../../../src/lib/article-data.json';
 import styles from '../../../styles/Background.module.css';
+import Link from "next/link";
 
 export default function CategorySlug({ data }) {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function CategorySlug({ data }) {
     });
   }
 
-  const shareUrl = 'https://blueshark.gravitas-staging.com/';
+  const shareUrl = 'https://blueshark.com.my/news/brand/blueshark-corporate-leasing-programme';
   const title = 'Blueshark Malaysia';
 
   return (
@@ -41,13 +42,33 @@ export default function CategorySlug({ data }) {
       <Head>
         <title>{data.header}</title>
       </Head>
-      <section className='h-[75vh] 3xl:h-[65vh] bg-[#F8F8F8] relative -z-10'>
-        <div className="text-title text-center font-bold pt-[9rem] leading-tight text-primary w-10/12 lg:w-5/12 mx-auto">{data.articleTitle}</div>
-        <div className='text-center absolute left-1/2 -translate-x-1/2 bottom-[-20%] xl:bottom-[-30%] w-full md:w-8/12 lg:w-7/12 min-w-[50%]'>
-          <Image src={data.mainBanner} width={"1000"} height={"500"} alt='' />
+      {/* <section className={`sm:hidden md:block  bg-cover bg-center bg-[url('/articleInternal/background/internal__bg-1.png')] relative`}> */}
+
+      <section className="">
+        <div className="sm:hidden md:block mt-[60px] pb-8 w-10/12 lg:w-6/12 h-fit mx-auto">
+          <Image src={data.mainBanner} width={"1920"} height={"1080"} alt="" />
         </div>
+        {/* <p className='text-custom-gray pb-8'>
+          {data.byline}
+        </p> */}
+        {/* <div className='sm:hidden md:block text-center absolute left-1/2 -translate-x-1/2 bottom-[-20%] xl:bottom-[-30%] w-full md:w-8/12 lg:w-6/12 min-w-[50%] z-10'>
+          <Image src={data.mainBanner} width={"1920"} height={"1080"} alt='' />
+        </div> */}
       </section>
-      <section className={`h-fit ${styles.articleBackground} pt-[20rem] lg:pt-[25rem] pb-[10rem]`}>
+      <section className={`sm:block md:hidden aspect-auto`}>
+        <Image src={'/articleInternal/background/internal__bg-1.png'} width={"1920"} height={"1080"} alt="" />
+
+        {/* <div className="sm:block md:hidden pb-8">
+        </div>
+        */}
+        {/* <p className='text-custom-gray pb-8'>
+          {data.byline}
+        </p> */}
+        {/* <div className='sm:hidden md:block text-center absolute left-1/2 -translate-x-1/2 bottom-[-20%] xl:bottom-[-30%] w-full md:w-8/12 lg:w-6/12 min-w-[50%] z-10'>
+          <Image src={data.mainBanner} width={"1920"} height={"1080"} alt='' />
+        </div> */}
+      </section >
+      <section className={`h-fit ${styles.articleBackground} pt-12 pb-[10rem]`}>
         <div className='w-10/12 lg:w-6/12 mx-auto'>
           <div className='flex items-end justify-between text-custom-gray pb-8'>
             <div className='italic'>
@@ -94,32 +115,90 @@ export default function CategorySlug({ data }) {
             </div>
           </div>
           <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
-          <p className='text-h2 leading-tight text-primary pb-8'>
-            {data.paragraphTitle}
+          <div className="text-title font-bold sm:pb-12 leading-tight text-primary mx-auto">{data.articleTitle}</div>
+
+          {data.byline ? <p className='text-custom-gray pb-8' dangerouslySetInnerHTML={{ __html: data.byline }}></p> : ""}
+
+          <div className="text-custom-gray pb-8" dangerouslySetInnerHTML={{ __html: data.paragraphTitle }}></div>
+
+          <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
+
+          <p className="text-h4 pb-8">
+            Ask us about our corporate pricing.
           </p>
-          <p className='text-custom-gray pb-8'>
-            {data.paragraph1}
+          <Link href="/r-series/form">
+            <button
+              className="text-button text-primary hover:text-white bg-transparent hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold mb-8"
+            >
+              Get in Touch
+            </button>
+          </Link>
+          <p dangerouslySetInnerHTML={{ __html: data.paragraph1 }} className='text-custom-gray pb-8'>
           </p>
           <p className='text-custom-gray pb-8'>
             {data.paragraph2}
           </p>
-          <p className='text-custom-gray pb-12'>
-            {data.paragraph3}
-          </p>
-          <div className='pb-12'>
-            <Image src={data.subBanner} width={800} height={300} alt='' />
-          </div>
-          <p className='text-h2 leading-tight text-primary pb-8'>
-            {data.secondaryParagraphTitle}
+          {data.embedYoutube ? <iframe className="pb-8 aspect-video w-full" src={`${data.embedYoutube}`}></iframe> : ""}
+          <p dangerouslySetInnerHTML={{ __html: data.paragraph3 }} className='text-custom-gray pb-12'>
           </p>
           <p className='text-custom-gray pb-12'>
             {data.paragraph4}
           </p>
-          <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
-          <p className='text-h2 text-center text-primary pb-8'>
+
+          {data.subBanner1 ? <div className='pb-12'>
+            <img src={data.subBanner1} width={900} height={500} alt='' />
+          </div> : ""}
+
+          {data.paragraph5 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph5 }}></p> : ""}
+
+          {data.paragraph6 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph6 }}></p> : ""}
+
+          {data.subBanner2 ? <div className='pb-12'>
+            <img src={data.subBanner2} width={900} height={500} alt='' />
+          </div> : ""}
+
+          {data.paragraph7 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph7 }}></p> : ""}
+
+          <div className="text-custom-gray pb-12">
+            <table className="w-full table-fixed border-[1px] border-black">
+              <tr>
+                <th className="bg-primary"></th>
+                <th className="text-white bg-primary">Purchasing ICE Scooters:</th>
+                <th className="text-white bg-primary">Leading Blueshark Scooters</th>
+              </tr>
+              <tr>
+                <th className="text-black">Initial Investment</th>
+                <th>Higher</th>
+                <th>Lower <br />You also have the added benefit to adjust or pause your subscription at any time.</th>
+              </tr>
+              <tr>
+                <th className="text-black">Depreciation</th>
+                <th>20% Annually</th>
+                <th>None</th>
+              </tr>
+              <tr>
+                <th className="text-black">Loan Interest</th>
+                <th>10% Annually</th>
+                <th>None</th>
+              </tr>
+            </table>
+          </div>
+
+          {data.paragraph8 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph8 }}></p> : ""}
+
+          {data.paragraph9 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph9 }}></p> : ""}
+
+          {/* <p className='text-h2 leading-tight text-primary pb-8'>
+            {data.secondaryParagraphTitle}
+          </p> */}
+
+          {/* Grey horizontal line */}
+          {/* <div className="border-b-[1px] w-full border-[#707070] mb-12"></div> */}
+
+          {/* <p className='text-h2 text-center text-primary pb-8'>
             Related Articles
-          </p>
-          <div className='grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8'>
+          </p> */}
+          {/* <div className='grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8'>
             <div className='rounded-[1rem] overflow-hidden flex flex-col'>
               <div className='articleImage flex-1'>
                 <Image src={relatedArticle1} alt='' />
@@ -159,7 +238,7 @@ export default function CategorySlug({ data }) {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div >

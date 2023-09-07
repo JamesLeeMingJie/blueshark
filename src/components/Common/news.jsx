@@ -10,7 +10,7 @@ export default function News({ img, description, day, source }) {
     <div className={`flex cursor-pointer flex-col h-full`}>
       {/* I don't understand why the image can't be filled */}
       <div className="articleImage">
-        <img src={img} className='w-full h-[200px]' />
+        <img src={img} className='w-full h-[200px] object-cover' alt='' />
       </div>
       <div className="flex-1 px-8 py-4 bg-[#FBF5FF] mt-[-3px]">
         <div className="flex items-center text-[14px] gap-x-4">

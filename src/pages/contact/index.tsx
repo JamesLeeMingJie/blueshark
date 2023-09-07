@@ -181,7 +181,7 @@ const ContactPage: NextPage = () => {
           Contact Us
         </div>
       </div> */}
-      <section className="sm:pt-40">
+      <section className="sm:pt-40 hidden">
         <div className="w-10/12 lg:w-8/12 mx-auto pb-4">
           <div className="md:flex justify-between items-center pb-4">
             <p className="lg:text-[40px] sm:text-[28px] font-semibold text-primary">Find Blueshark at</p>
@@ -404,7 +404,8 @@ const ContactPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-white sm:pt-20 sm:pb-20 md:pt-0 lg:pb-0 h-fit lg:h-screen 3xl:h-[calc(100vh-115px)]">
+      {/* Padding top below here to be changed to sm:pt-20 md:pt-0 when dealership goes live */}
+      <section className="bg-white sm:pt-40 sm:pb-20 md:pt-20 lg:pb-0 h-fit lg:h-screen 3xl:h-[calc(100vh-115px)]">
         <div className="h-full flex items-center">
           <div className="sm:w-10/12 lg:w-8/12 mx-auto flex sm:flex-col lg:flex-row items-start gap-x-20">
             <div className="sm:w-full lg:w-1/2 min-w-[50%] lg:mr-8 sm:pb-12 lg:pb-0">

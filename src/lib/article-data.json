@@ -1,5 +1,5 @@
 {
-  "brands": {
+  "dummy": {
     "caricarz-launched-blueshark-r1-smart-ev-scooter": {
       "header": "First Article",
       "articleTitle": "The world's smartest electric scooter has arrived.",
@@ -12,6 +12,29 @@
       "subBanner": "/../public/revampImages/article-banner.png",
       "secondaryParagraphTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "paragraph4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    }
+  },
+  "brand": {
+    "blueshark-corporate-leasing-programme": {
+      "header": "Blueshark Corporate Leasing Programme",
+      "byline": "Smart CAPEX Management with Blueshark Corporate Leasing Programme (at RM 487/Month)",
+      "articleTitle": "Start your Fleet for Less with Blueshark’s Corporate Leasing Programme ",
+      "mainBanner": "/articleInternal/background/internal__bg-1.png",
+      "date": "September 6, 2023",
+      "paragraphTitle": "At <a class='text-primary font-bold' href=https://blueshark.com.my/>Blueshark Malaysia</a>, we’ve unveiled the ‘Blueshark Corporate Leasing Programme,’ designed to provide businesses with the ability to jumpstart their logistic operations at a more modest expense compared to traditional fleet management.",
+      "paragraph1": "As EV adoption has increasingly become a priority for the Malaysian government as manifested in the <a class='text-primary font-bold' href='https://rmke12.ekonomi.gov.my/en'>12th Malaysia Plan</a> to make our country a carbon-neutral nation by 2050, this initiative promotes the opportunity to adopt EVs into the future business model through multiple incentives and benefits to the business owner.",
+      "paragraph2": "To kickstart this series, we’ll explore Capital Expenditure or Smart Capex Management.",
+      "embedYoutube": "https://www.youtube.com/embed/Be9uoWpGeyo",
+      "paragraph3": "When it comes to Smart CAPEX Management, we must first ask <span class='text-black font-bold'>‘Why do businesses need to procure fleets?’</span>",
+      "paragraph4": "In an era driven by e-commerce and changing consumer needs, the importance of seamless transportation has only grown. Fleet management profoundly impacts your business, and procuring your own vehicle fleet is among one of the most important business decisions you’ll make.",
+      "subBanner1": "/articleInternal/sub-banner/sub__banner-1.png",
+      "paragraph5": "When it comes to procuring a new fleet of vehicles for your business, there are 3 factors to consider: <br><br><ul class='pl-8'><li>1. Initial Investment</li><li>2. Depreciation</li><li>3. Loan Interest</li></ul><br>Let’s break down the cost of starting your own fleet team for a simple Internal Combustion Engine (ICE) or petrol motorbike versus the <a class='text-primary font-bold' href='https://blueshark.com.my/r-series/overview'>Blueshark Smart Electric Scooters</a> through our simple case study.",
+      "paragraph6": "Acquiring a fleet of standard petrol bikes comes at a high cost of capital expenditure. For instance, for a business owner who wants to invest in 50 bikes, the estimated average cost of purchasing an ordinary ICE motorbike would be RM8,000. The business owner will then need to fork out a <span class='underline'>sum of RM400,000.</span>",
+      "subBanner2": "/articleInternal/sub-banner/sub__banner-2.png",
+      "paragraph7": "With the <span class='text-black font-bold'>Blueshark Leasing Programme</span>, you can start a fleet with only just RM24,350 for the same number of bikes. This would mean your starting Capex will only be 6% of the RM400,000 cost of purchasing a fleet inventory of ICE bikes. Our monthly subscription plan for a bike starts <span class='underline'>as low as RM 487 per month.</span>",
+      "paragraph8": "When it comes to the Blueshark Leasing Programme— the choice is clear. Businesses no longer have to worry about being locked into long-term contracts or committing to a fixed fleet size. Instead, our programme provides businesses with the flexibility to pause their subscription and to adjust their fleet size based on their specific needs or market demands. This allows them to adapt and respond quickly to changes in their industry or market conditions.",
+      "paragraph9": "With our leasing model, the same budget can be used for more meaningful business activities, such as business expansion or for business operations. Blueshark allows organisations of all sizes (small, medium or large enterprises) to engage fleet management in a more cost-effective way.",
+      "secondaryParagraphTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
   }
 }

@@ -327,6 +327,10 @@ export default function NewsPage() {
     return mth.month === 'august';
   });
 
+  const filterSeptember = consolidatedData.filter(function (mth) {
+    return mth.month === 'september';
+  });
+
   const totalDataMarch = filterMarch.length;
   const totalMarchPages = Math.ceil(totalDataMarch / limit);
 
@@ -404,8 +408,8 @@ export default function NewsPage() {
                 <option value="June">June</option>
                 <option value="July">July</option>
                 <option value="August">August</option>
-                {/*
                 <option value="September">September</option>
+                {/*
                 <option value="October">October</option>
                 <option value="November">November</option>
                 <option value="December">December</option>  */}
@@ -708,15 +712,16 @@ export default function NewsPage() {
             </div>
           )}
           {filterDate === 'September' && (
-            <div className="w-10/12 lg:w-8/12 mx-auto pb-20 grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className={`rounded-[1rem] overflow-hidden block`}>
-                {/* <News
-                  day={'January 5, 2023'}
-                  img={dummyImage}
-                  link={`/news/sixth-article`}
-                  description={'First dummy Blueshark article'}
-                /> */}
-              </div>
+            <div className="w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-20 grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filterSeptember.map(function (data) {
+                return (
+                  <a id={data.id} key={data.id} href={data.link} target='_blank' rel='noreferrer'>
+                    <div className={`rounded-[1rem] overflow-hidden block h-full`}>
+                      <News day={data.date} img={data.img} description={data.description} source={data.source} />
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           )}
           {filterDate === 'October' && (

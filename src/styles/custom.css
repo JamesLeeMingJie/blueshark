@@ -53,6 +53,12 @@
   }
 }
 
+/***** News *****/
+th, td {
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+
 /***** Contact Us *****/
 .tableRow {
   padding: 2rem 0 2rem 1rem;
@@ -167,4 +173,9 @@
 .text-base {
   font-size: clamp(1.6rem, 1.5vw, 1.8rem);
   /* font-weight: 700; */
+}
+
+/* Text decoration */
+.underline {
+  text-decoration: underline;
 }
