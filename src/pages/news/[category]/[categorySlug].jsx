@@ -7,11 +7,7 @@ import Swal from "sweetalert2";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 import { BsLink45Deg, BsFacebook, BsLinkedin, BsTwitter } from 'react-icons/bs';
 
-// import relatedArticle1 from '../../../../public/revampImages/related-article1.png';
-// import relatedArticle2 from '../../../../public/revampImages/related-article2.png';
-// import relatedArticle3 from '../../../../public/revampImages/related-article3.png';
-
-import articleData from '../../../../src/lib/article-data.json';
+// import articleData from '../../../../src/lib/article-data.json';
 import styles from '../../../styles/Background.module.css';
 import Link from "next/link";
 
@@ -19,6 +15,7 @@ export default function CategorySlug({ data }) {
   const router = useRouter();
   const { category, categorySlug } = router.query;
   console.log(category, categorySlug);
+  // console.log(data);
 
   // const data = articleData[category]?.[categorySlug];
   // console.log(data);
@@ -35,7 +32,9 @@ export default function CategorySlug({ data }) {
   }
 
   const shareUrl = 'https://blueshark.com.my/news/brand/blueshark-corporate-leasing-programme';
-  const title = 'Blueshark Malaysia';
+  const shareTitle = 'Blueshark Malaysia';
+
+  const mainBanner = data.mainBanner;
 
   return (
     <div>
@@ -46,7 +45,7 @@ export default function CategorySlug({ data }) {
 
       <section className="">
         <div className="sm:hidden md:block mt-[60px] pb-8 w-10/12 lg:w-6/12 h-fit mx-auto">
-          <Image src={data.mainBanner} width={"1920"} height={"1080"} alt="" />
+          <Image src={mainBanner} width={"1920"} height={"1080"} alt="" />
         </div>
         {/* <p className='text-custom-gray pb-8'>
           {data.byline}
@@ -90,7 +89,7 @@ export default function CategorySlug({ data }) {
                 <div className='text-[#0077B7] pt-2'>
                   <LinkedinShareButton
                     url={shareUrl}
-                    quote={title}
+                    quote={shareTitle}
                   >
                     <BsLinkedin />
                   </LinkedinShareButton>
@@ -98,7 +97,7 @@ export default function CategorySlug({ data }) {
                 <div className='text-[#1D9BF0] pt-2'>
                   <TwitterShareButton
                     url={shareUrl}
-                    quote={title}
+                    quote={shareTitle}
                   >
                     <BsTwitter />
                   </TwitterShareButton>
@@ -106,7 +105,7 @@ export default function CategorySlug({ data }) {
                 <div className='text-[#1877F2] pt-2'>
                   <FacebookShareButton
                     url={shareUrl}
-                    quote={title}
+                    quote={shareTitle}
                   >
                     <BsFacebook />
                   </FacebookShareButton>
@@ -121,29 +120,34 @@ export default function CategorySlug({ data }) {
 
           <div className="text-custom-gray pb-8" dangerouslySetInnerHTML={{ __html: data.paragraphTitle }}></div>
 
-          <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
+          {data.contactButton && data.id === 1 ? <>
+            <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
+            <p className="text-h4 pb-8">
+              Ask us about our corporate pricing.
+            </p>
+            <Link href="/r-series/form">
+              <button
+                className="text-button text-primary hover:text-white bg-transparent hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold mb-8"
+              >
+                Get in Touch
+              </button>
+            </Link>
+          </> : ""}
 
-          <p className="text-h4 pb-8">
-            Ask us about our corporate pricing.
-          </p>
-          <Link href="/r-series/form">
-            <button
-              className="text-button text-primary hover:text-white bg-transparent hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold mb-8"
-            >
-              Get in Touch
-            </button>
-          </Link>
-          <p dangerouslySetInnerHTML={{ __html: data.paragraph1 }} className='text-custom-gray pb-8'>
-          </p>
-          <p className='text-custom-gray pb-8'>
+          {data.paragraph1 ? <p dangerouslySetInnerHTML={{ __html: data.paragraph1 }} className='text-custom-gray pb-8'>
+          </p> : ""}
+
+          {data.paragraph2 ? <p className='text-custom-gray pb-8'>
             {data.paragraph2}
-          </p>
+          </p> : ""}
+
           {data.embedYoutube ? <iframe className="pb-8 aspect-video w-full" src={`${data.embedYoutube}`}></iframe> : ""}
           <p dangerouslySetInnerHTML={{ __html: data.paragraph3 }} className='text-custom-gray pb-12'>
           </p>
-          <p className='text-custom-gray pb-12'>
-            {data.paragraph4}
-          </p>
+
+          {data.paragraph4 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph4 }}></p> : ""}
+
+          {data.subBannerTitle1 ? <div className="text-base font-bold pb-4">{data.subBannerTitle1}</div> : ""}
 
           {data.subBanner1 ? <div className='pb-12'>
             <img src={data.subBanner1} width={900} height={500} alt='' />
@@ -153,23 +157,39 @@ export default function CategorySlug({ data }) {
 
           {data.paragraph6 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph6 }}></p> : ""}
 
+          {data.subBannerTitle2 ? <div className="text-base font-bold pb-4">{data.subBannerTitle2}</div> : ""}
+
           {data.subBanner2 ? <div className='pb-12'>
             <img src={data.subBanner2} width={900} height={500} alt='' />
           </div> : ""}
 
           {data.paragraph7 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph7 }}></p> : ""}
 
-          <div className="text-custom-gray pb-12">
+          {data.contactButton && data.id === 2 ? <>
+            <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
+            <p className="text-h4 pb-8">
+              Ask us about our corporate pricing.
+            </p>
+            <Link href="/r-series/form">
+              <button
+                className="text-button text-primary hover:text-white bg-transparent hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold mb-8"
+              >
+                Get in Touch
+              </button>
+            </Link>
+          </> : ""}
+
+          {data.id === 1 ? <div className="text-custom-gray pb-12">
             <table className="w-full table-fixed border-[1px] border-black">
               <tr>
                 <th className="bg-primary"></th>
                 <th className="text-white bg-primary">Purchasing ICE Scooters:</th>
-                <th className="text-white bg-primary">Leading Blueshark Scooters</th>
+                <th className="text-white bg-primary">Leasing Blueshark Scooters</th>
               </tr>
               <tr>
                 <th className="text-black">Initial Investment</th>
                 <th>Higher</th>
-                <th>Lower <br />You also have the added benefit to adjust or pause your subscription at any time.</th>
+                <th>Lower <br /><br />You also have the added benefit to adjust or pause your subscription at any time.</th>
               </tr>
               <tr>
                 <th className="text-black">Depreciation</th>
@@ -182,11 +202,44 @@ export default function CategorySlug({ data }) {
                 <th>None</th>
               </tr>
             </table>
-          </div>
+          </div> : ""}
 
           {data.paragraph8 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph8 }}></p> : ""}
 
+          {data.id === 2 ? <div className="text-custom-gray pb-12">
+            <table className="w-full table-fixed border-[1px] border-black">
+              <tr>
+                <th className="text-white bg-primary">Fleet of x50 Two-Wheeled Vehicles</th>
+                <th className="text-white bg-primary">Purchasing ICE Scooters</th>
+                <th className="text-white bg-primary">Leading Blueshark Scooters</th>
+              </tr>
+              <tr>
+                <th className="text-black">Fuel Consumption</th>
+                <th>RM 102,500/year</th>
+                <th>RM59,400/year <br /><br />(with the BlueSwapStandard Subscription Plan)</th>
+              </tr>
+              <tr>
+                <th className="text-black">Service & Maintenance</th>
+                <th>RM 25,000/year</th>
+                <th>RM0 <br /><br />(covered by Blueshark’s Corporate Subscription Plan)</th>
+              </tr>
+              <tr>
+                <th className="text-black">Total Operational Costs</th>
+                <th>RM 127,500/year</th>
+                <th>RM 59,400/year <br /><br /><span className="text-black">(58% less annually)</span></th>
+              </tr>
+            </table>
+          </div> : ""}
+
+          {data.subBanner3 ? <div className='pb-12'>
+            <img src={data.subBanner3} width={900} height={500} alt='' />
+          </div> : ""}
+
           {data.paragraph9 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph9 }}></p> : ""}
+
+          {data.paragraph10 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph10 }}></p> : ""}
+
+          {data.paragraph11 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph11 }}></p> : ""}
 
           {/* <p className='text-h2 leading-tight text-primary pb-8'>
             {data.secondaryParagraphTitle}
@@ -239,20 +292,36 @@ export default function CategorySlug({ data }) {
               </div>
             </div>
           </div> */}
+
         </div>
-      </section>
+      </section >
     </div >
   );
 }
 
 export async function getServerSideProps(context) {
-  const { default: articleDetails } = await import('../../../../src/lib/article-data.json');
+  try {
+    const { default: articleDetails } = await import('../../../../src/lib/article-data.json');
 
-  console.log(articleData);
+    // console.log(articleDetails);
 
-  return {
-    props: {
-      data: articleDetails[context.query.category]?.[context.query.categorySlug] || null,
-    },
-  };
+    const data = articleDetails[context.query.category]?.[context.query.categorySlug] || null;
+
+    if (!data) {
+      throw new Error("Data not found");
+    }
+
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.error("Error:", error);
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 }

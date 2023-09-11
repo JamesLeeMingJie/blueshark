@@ -37,10 +37,18 @@ const ContactPage: NextPage = () => {
     filteringData(value);
   };
 
-  const filteringData = (input: any) => {
+  const filteringData = (input: string) => {
     const newData = dealerData.data.filter((item) => {
-      return item.company_name.toLowerCase().includes(input.toLowerCase());
+      const companyNameMatch = item.company_name.toLowerCase().includes(input.toLowerCase());
+      const address = item.address.toLowerCase();
+      const inputLowerCase = input.toLowerCase();
+
+      // Check for exact address match or partial match
+      const addressMatch = address === inputLowerCase || address.includes(inputLowerCase);
+
+      return companyNameMatch || addressMatch;
     });
+
     setFilteredData(newData);
   };
 
@@ -181,7 +189,7 @@ const ContactPage: NextPage = () => {
           Contact Us
         </div>
       </div> */}
-      <section className="sm:pt-40 hidden">
+      <section className="sm:pt-40">
         <div className="w-10/12 lg:w-8/12 mx-auto pb-4">
           <div className="md:flex justify-between items-center pb-4">
             <p className="lg:text-[40px] sm:text-[28px] font-semibold text-primary">Find Blueshark at</p>
@@ -195,32 +203,25 @@ const ContactPage: NextPage = () => {
                 }}
               >
                 <option value="">[ PLEASE SELECT ]</option>
-                <option value="JOHOR">JOHOR</option>
-                <option value="KEDAH">KEDAH</option>
+                {/* <option value="JOHOR">JOHOR</option> */}
+                {/* <option value="KEDAH">KEDAH</option> */}
                 <option value="KELANTAN">KELANTAN</option>
-                <option value="MELAKA">MELAKA</option>
-                <option value="NEGERI SEMBILAN">NEGERI SEMBILAN</option>
-                <option value="PAHANG">PAHANG</option>
-                <option value="PERAK">PERAK</option>
-                <option value="PERLIS">PERLIS</option>
-                <option value="PULAU PINANG">PULAU PINANG</option>
-                <option value="SABAH">SABAH</option>
-                <option value="SARAWAK">SARAWAK</option>
+                {/* <option value="MELAKA">MELAKA</option> */}
+                {/* <option value="NEGERI SEMBILAN">NEGERI SEMBILAN</option> */}
+                {/* <option value="PAHANG">PAHANG</option> */}
+                {/* <option value="PERAK">PERAK</option> */}
+                {/* <option value="PERLIS">PERLIS</option> */}
+                {/* <option value="PULAU PINANG">PULAU PINANG</option> */}
+                {/* <option value="SABAH">SABAH</option> */}
+                {/* <option value="SARAWAK">SARAWAK</option> */}
                 <option value="SELANGOR">SELANGOR</option>
-                <option value="TERENGGANU">TERENGGANU</option>
+                {/* <option value="TERENGGANU">TERENGGANU</option> */}
                 <option value="WP KUALA LUMPUR">WP KUALA LUMPUR</option>
-                <option value="WP LABUAN">WP LABUAN</option>
+                {/* <option value="WP LABUAN">WP LABUAN</option> */}
                 <option value="WP PUTRAJAYA">WP PUTRAJAYA</option>
               </select>
             </div>
           </div>
-          <input
-            className="text-base shadow-lg p-4 mb-4 border-primary border-[1.5px] rounded-[8px]"
-            placeholder="Enter keyword here..."
-            value={searchTerm}
-            onChange={handleInputChange}
-          />
-          {/* <p className="lg:text-[28px] sm:text-[20px] font-semibold text-black">Where to find us?</p> */}
         </div>
         <div className="w-10/12 lg:w-8/12 mx-auto text-base font-semibold uppercase flex-wrap gap-x-12 items-center sm:hidden md:flex pb-4">
           <div
@@ -355,57 +356,160 @@ const ContactPage: NextPage = () => {
           </div>
         </div> */}
 
-        <div className="mx-auto w-10/12 md:w-8/12 bg-[#F6F6F6] p-8 h-[450px] overflow-y-auto">
-          {filteredData.map(function (item) {
-            return (
-              <div key={item.id} className="border-b-[2px] pb-4 mb-8 px-2">
-                <p className="leading-none pb-4 text-dealership-name">{item.company_name}</p>
-                <a href={`${item.location}`}>
-                  <p className="text-body3 pb-4">{item.address}</p>
-                </a>
-                <p className="text-[16px] pb-4 flex items-center">
-                  <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
-                    <BsTelephone />
-                  </span>
-                  {item.contact_no}
-                </p>
-                <p className="text-[16px] pb-4 flex items-center">
-                  <span className="mr-4 text-primary text-[32px]">
-                    <HiOutlineBuildingStorefront />
-                  </span>
-                  {item.operation_hours}
-                </p>
-              </div>
-            );
-          })}
+        <div className="mx-auto w-10/12 md:w-8/12 bg-[#F6F6F6] p-8 h-[450px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-[1rem] scrollbar-thumb-[#CFCFCF] relative">
+          <input
+            className="text-base shadow-lg p-4 mb-12 sm:w-full lg:w-[350px] border-primary border-[1.5px] rounded-[8px] sticky top-0"
+            placeholder="Search for your Blueshark.."
+            value={searchTerm}
+            onChange={handleInputChange}
+          />
 
-          {/* {dealerData.data.map(function (item) {
-            return (
-              <div key={item.id} className="border-b-[2px] pb-4 mb-8 px-2">
-                <p className="leading-none pb-4 text-dealership-name">{item.company_name}</p>
-                <a href={`${item.location}`}>
-                  <p className="text-body3 pb-4">{item.address}</p>
-                </a>
-                <p className="text-[16px] pb-4 flex items-center">
-                  <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
-                    <BsTelephone />
-                  </span>
-                  {item.contact_no}
-                </p>
-                <p className="text-[16px] pb-4 flex items-center">
-                  <span className="mr-4 text-primary text-[32px]">
-                    <HiOutlineBuildingStorefront />
-                  </span>
-                  {item.operation_hours}
-                </p>
-              </div>
-            );
-          })} */}
+          {firstTab && (
+            <>
+              {filteredData
+                .filter(function (item) {
+                  return state ? item.state === state : item;
+                })
+                .map(function (item) {
+                  return (
+                    <div key={item.id} className="border-b-[2px] pb-4 mb-8 px-2">
+                      <p className="leading-none pb-4 text-dealership-name">{item.company_name}</p>
+                      <a className="flex items-center pb-4" href={`${item.location}`} target="_blank" rel="noreferrer">
+                        <span className="mr-4 text-[32px] text-primary">
+                          <IoLocationOutline />
+                        </span>
+                        <p className="text-body3">{item.address}</p>
+                      </a>
+                      {item.contact_no ? (
+                        <p className="text-[16px] pb-4 flex items-center">
+                          <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
+                            <BsTelephone />
+                          </span>
+                          {item.contact_no}
+                        </p>
+                      ) : (
+                        ''
+                      )}
+
+                      {item.operation_hours ? (
+                        <p className="text-[16px] pb-4 flex items-center">
+                          <span className="mr-4 text-primary text-[32px]">
+                            <HiOutlineBuildingStorefront />
+                          </span>
+                          <div>
+                            {item.operation_hours.length === 1
+                              ? item.operation_hours
+                              : item.operation_hours.map(function (item: any) {
+                                  return (
+                                    <>
+                                      <div>{item}</div>
+                                    </>
+                                  );
+                                })}
+                          </div>
+                        </p>
+                      ) : (
+                        ''
+                      )}
+                    </div>
+                  );
+                })}
+            </>
+          )}
+
+          {secondTab && (
+            <>
+              {filteredData
+                .filter(function (item) {
+                  return item.test_ride === 'yes';
+                })
+                .filter(function (item) {
+                  return state ? item.state === state : item;
+                })
+                .map(function (item) {
+                  return (
+                    <div key={item.id} className="border-b-[2px] pb-4 mb-8 px-2">
+                      <p className="leading-none pb-4 text-dealership-name">{item.company_name}</p>
+                      <a className="flex items-center pb-4" href={`${item.location}`} target="_blank" rel="noreferrer">
+                        <span className="mr-4 text-[32px] text-primary">
+                          <IoLocationOutline />
+                        </span>
+                        <p className="text-body3">{item.address}</p>
+                      </a>
+                      {item.contact_no ? (
+                        <p className="text-[16px] pb-4 flex items-center">
+                          <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
+                            <BsTelephone />
+                          </span>
+                          {item.contact_no}
+                        </p>
+                      ) : (
+                        ''
+                      )}
+                      {item.operation_hours ? (
+                        <p className="text-[16px] pb-4 flex items-center">
+                          <span className="mr-4 text-primary text-[32px]">
+                            {item.operation_hours ? <HiOutlineBuildingStorefront /> : ''}
+                          </span>
+                          {item.operation_hours}
+                        </p>
+                      ) : (
+                        ''
+                      )}
+                    </div>
+                  );
+                })}
+            </>
+          )}
+
+          {thirdTab && (
+            <>
+              {filteredData
+                .filter(function (item) {
+                  return item.workshop === 'yes';
+                })
+                .filter(function (item) {
+                  return state ? item.state === state : item;
+                })
+                .map(function (item) {
+                  return (
+                    <div key={item.id} className="border-b-[2px] pb-4 mb-8 px-2">
+                      <p className="leading-none pb-4 text-dealership-name">{item.company_name}</p>
+                      <a className="flex items-center pb-4" href={`${item.location}`} target="_blank" rel="noreferrer">
+                        <span className="mr-4 text-[32px] text-primary">
+                          <IoLocationOutline />
+                        </span>
+                        <p className="text-body3">{item.address}</p>
+                      </a>
+                      {item.contact_no ? (
+                        <p className="text-[16px] pb-4 flex items-center">
+                          <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
+                            <BsTelephone />
+                          </span>
+                          {item.contact_no}
+                        </p>
+                      ) : (
+                        ''
+                      )}
+                      {item.operation_hours ? (
+                        <p className="text-[16px] pb-4 flex items-center">
+                          <span className="mr-4 text-primary text-[32px]">
+                            {item.operation_hours ? <HiOutlineBuildingStorefront /> : ''}
+                          </span>
+                          {item.operation_hours}
+                        </p>
+                      ) : (
+                        ''
+                      )}
+                    </div>
+                  );
+                })}
+            </>
+          )}
         </div>
       </section>
 
-      {/* Padding top below here to be changed to sm:pt-20 md:pt-0 when dealership goes live */}
-      <section className="bg-white sm:pt-40 sm:pb-20 md:pt-20 lg:pb-0 h-fit lg:h-screen 3xl:h-[calc(100vh-115px)]">
+      <section className="bg-white sm:pt-20 sm:pb-20 lg:pt-0 lg:pb-0 h-fit lg:h-screen 3xl:h-[calc(100vh-115px)]">
         <div className="h-full flex items-center">
           <div className="sm:w-10/12 lg:w-8/12 mx-auto flex sm:flex-col lg:flex-row items-start gap-x-20">
             <div className="sm:w-full lg:w-1/2 min-w-[50%] lg:mr-8 sm:pb-12 lg:pb-0">

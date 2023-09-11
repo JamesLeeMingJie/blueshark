@@ -1,24 +1,11 @@
 {
-  "dummy": {
-    "caricarz-launched-blueshark-r1-smart-ev-scooter": {
-      "header": "First Article",
-      "articleTitle": "The world's smartest electric scooter has arrived.",
-      "mainBanner": "/../public/background/article-bg.png",
-      "date": "March 31, 2024",
-      "paragraphTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "paragraph1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "paragraph2": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.",
-      "paragraph3": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
-      "subBanner": "/../public/revampImages/article-banner.png",
-      "secondaryParagraphTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "paragraph4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    }
-  },
   "brand": {
     "blueshark-corporate-leasing-programme": {
+      "id": 1,
       "header": "Blueshark Corporate Leasing Programme",
       "byline": "Smart CAPEX Management with Blueshark Corporate Leasing Programme (at RM 487/Month)",
       "articleTitle": "Start your Fleet for Less with Blueshark’s Corporate Leasing Programme ",
+      "contactButton": true,
       "mainBanner": "/articleInternal/background/internal__bg-1.png",
       "date": "September 6, 2023",
       "paragraphTitle": "At <a class='text-primary font-bold' href=https://blueshark.com.my/>Blueshark Malaysia</a>, we’ve unveiled the ‘Blueshark Corporate Leasing Programme,’ designed to provide businesses with the ability to jumpstart their logistic operations at a more modest expense compared to traditional fleet management.",
@@ -35,6 +22,33 @@
       "paragraph8": "When it comes to the Blueshark Leasing Programme— the choice is clear. Businesses no longer have to worry about being locked into long-term contracts or committing to a fixed fleet size. Instead, our programme provides businesses with the flexibility to pause their subscription and to adjust their fleet size based on their specific needs or market demands. This allows them to adapt and respond quickly to changes in their industry or market conditions.",
       "paragraph9": "With our leasing model, the same budget can be used for more meaningful business activities, such as business expansion or for business operations. Blueshark allows organisations of all sizes (small, medium or large enterprises) to engage fleet management in a more cost-effective way.",
       "secondaryParagraphTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "effectively-manage-fleet-costs-with-blueshark-leasing-programme": {
+      "id": 2,
+      "header": "Effectively Manage Fleet Costs with Blueshark Leasing Programme",
+      "byline": "Smart OPEX management with Blueshark’s Leasing Programme.",
+      "articleTitle": "Effectively Manage Fleet Costs with Blueshark Leasing Programme",
+      "mainBanner": "/articleInternal/background/internal__bg-2.png",
+      "date": "September 11, 2023",
+      "paragraphTitle": "The <span class='text-black font-bold'>Blueshark Leasing Programme</span> was designed to provide businesses with the ability to jumpstart their logistic operations at a more modest expense compared to traditional fleet management.<br><br>In our last article, we delved into the Capital Expenditure involved in procuring your own fleet of vehicles. <br><br>Now, let's shift our focus to the operational expenditure aspect and how leasing your fleet with us can provide additional cost-saving opportunities for your business.",
+      "contactButton": true,
+      "paragraph1": "",
+      "paragraph2": "",
+      "embedYoutube": "https://www.youtube.com/embed/qeZLsUydVGA",
+      "paragraph3": "Operational Expenditure or Smart OPEX Management, refers to the ongoing costs associated with running and maintaining a vehicle fleet. This includes expenses such as fuel, maintenance and repairs, and more. These costs can quickly add up and become a significant burden for businesses.",
+      "paragraph4": "Let’s explore the difference between managing your own fleet team when it comes to yearly fuel consumption, and service and maintenance costs for a simple Internal Combustion Engine (ICE) or petrol motorbike versus the <a class='text-primary font-bold' href='https://blueshark.com.my/r-series/overview'>Blueshark Smart Electric Scooters.</a>",
+      "subBannerTitle1": "Fuel Consumption",
+      "subBanner1": "/articleInternal/sub-banner/sub__banner-3.png",
+      "paragraph5": "For instance, the average fuel consumption for an ordinary ICE motorbike travelling an annual distance of 45,000km would cost RM 2,050 based on the current market rate. For a business owner who wants to invest in a fleet of 50 bikes that would total RM102,500 annually.",
+      "paragraph6": "However, with Blueshark’s innovative battery solutions, businesses can conveniently charge-up their vehicles from any standard power outlet or swap to fully-charged batteries in seconds at our designated BlueSwap facilities, <a class='text-primary font-bold' href='https://blueshark.com.my/battery'>BlueStations</a>. <br><br>Travelling a similar annual distance with our <a class='text-primary font-bold' href='https://blueshark.com.my/r-series/pricing'>BlueSwapStandard Subscription Plan</a> at RM99 monthly which equals to RM1,118 in a year. For the same fleet size, that’s only <span class='underline'>RM59,400 per year.</span>",
+      "subBannerTitle2": "Servicing & Maintenance",
+      "subBanner2": "/articleInternal/sub-banner/sub__banner-4.png",
+      "paragraph7": "When it comes to maintenance, an average ICE bike can costs up to RM500 a year per bike. An inventory of 50 bikes will cost RM25,000 annually to maintain.<br><br> However, maintenance and servicing costs are already included in the Blueshark’s Corporate Subscription Plan; saving businesses even more in the long run.",
+      "paragraph8": "To recap, with the Blueshark Leasing Programme, we take care of all aspects of operating your vehicles.",
+      "subBanner3": "/articleInternal/sub-banner/sub__banner-5.png",
+      "paragraph9": "On top of all of that Blueshark also offers businesses real-time visibility on your operations with our <span class='italic'>Blueshark App.</span>",
+      "paragraph10": "In summary, by choosing the Blueshark Leasing Programme, you can effectively manage your operational expenditure while enjoying the benefits of a well-maintained and optimised vehicle fleet. This translates into significant cost savings, improved efficiency, and peace of mind for your business.",
+      "paragraph11": "We’ve also covered Capex Management in this series, check them out here: <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/blueshark-corporate-leasing-programme'>Start your Fleet for Less with Blueshark’s Corporate Leasing Programme</a>"
     }
   }
 }

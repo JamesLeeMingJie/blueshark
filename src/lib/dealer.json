@@ -12,7 +12,9 @@
       "workshop": "yes",
       "test_ride": "yes",
       "state": "WP KUALA LUMPUR",
-      "operation_hours": "930am - 6pm except Sunday"
+      "operation_hours": [
+        "930am - 6pm Daily except Sunday"
+      ]
     },
     {
       "id": 2,
@@ -26,7 +28,9 @@
       "workshop": "yes",
       "test_ride": "yes",
       "state": "WP KUALA LUMPUR",
-      "operation_hours": "830am - 6pm except Sunday"
+      "operation_hours": [
+        "830am - 6pm Daily except Sunday"
+      ]
     },
     {
       "id": 3,
@@ -57,7 +61,9 @@
       "workshop": "yes",
       "test_ride": "yes",
       "state": "SELANGOR",
-      "operation_hours": "9am - 7pm except Sunday"
+      "operation_hours": [
+        "9am - 7pm Daily except Sunday"
+      ]
     },
     {
       "id": 6,
@@ -71,13 +77,15 @@
       "workshop": "yes",
       "test_ride": "yes",
       "state": "SELANGOR",
-      "operation_hours": "830am - 7pm except Sunday"
+      "operation_hours": [
+        "830am - 7pm Daily except Sunday"
+      ]
     },
     {
       "id": 7,
       "dealer": "Mr. Jimmy",
-      "company_name": "YS Chong Motor Trd Sdn Bhd",
-      "address": "No.606, Jalan SS9A/13, Seri Setia (Sg. Way)47300 Petaling Jaya, Selangor",
+      "company_name": "Y.S Chong Motor Trd Sdn Bhd",
+      "address": "No.606, Jalan SS9A/13, Seri Setia (Sg. Way) 47300 Petaling Jaya, Selangor",
       "location": [
         "https://goo.gl/maps/WYXB4m4FfcthBddK6"
       ],
@@ -85,7 +93,9 @@
       "workshop": "yes",
       "test_ride": "yes",
       "state": "SELANGOR",
-      "operation_hours": "830am - 6pm except Sunday"
+      "operation_hours": [
+        "830am - 6pm Daily except Sunday"
+      ]
     },
     {
       "id": 10,
@@ -99,7 +109,9 @@
       "workshop": "yes",
       "test_ride": "yes",
       "state": "SELANGOR",
-      "operation_hours": "9am - 730pm except Sunday"
+      "operation_hours": [
+        "9am - 730pm Daily except Sunday"
+      ]
     },
     {
       "id": 11,
@@ -111,7 +123,8 @@
       ],
       "contact_no": "",
       "workshop": "yes",
-      "test_ride": "yes"
+      "test_ride": "yes",
+      "state": "KELANTAN"
     },
     {
       "id": 13,
@@ -125,7 +138,9 @@
       "workshop": "no",
       "test_ride": "no",
       "state": "WP PUTRAJAYA",
-      "operation_hours": "Daily 10am - 10pm"
+      "operation_hours": [
+        "10am - 10pm Daily"
+      ]
     },
     {
       "id": 14,
@@ -138,7 +153,10 @@
       "contact_no": "03-4041 7576",
       "workshop": "yes",
       "test_ride": "yes",
-      "operation_hours": "9am - 7pm except Sunday"
+      "state": "WP KUALA LUMPUR",
+      "operation_hours": [
+        "9am - 7pm Daily except Sunday"
+      ]
     }
   ]
 }
