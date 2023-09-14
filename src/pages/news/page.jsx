@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import News from 'components/Common/news';
 import newsData from '../../lib/page.json';
 
+import newsDataNew from '../../lib/new-page.json';
+
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 
 import dummyImage from '../../../public/revampImages/battery-station.png';
@@ -107,49 +109,29 @@ export default function NewsPage() {
   //   setOutputData(newData);
   // }, [currentLimit]);
 
+  const sortedDataDesc = newsDataNew.sort(function (a, b) {
+    const dateAArray = a.date.split('-').map(Number); // Split and convert to numbers
+    const dateBArray = b.date.split('-').map(Number); // Split and convert to numbers
+
+    // Compare years first
+    if (dateAArray[2] !== dateBArray[2]) {
+      return dateBArray[2] - dateAArray[2];
+    }
+
+    // If years are the same, compare months
+    if (dateAArray[1] !== dateBArray[1]) {
+      return dateBArray[1] - dateAArray[1];
+    }
+
+    // If months are the same, compare days
+    return dateBArray[0] - dateAArray[0];
+  });
+
   // =================================================================================
 
   // Filtered Categories
 
-  // From second category
-  // const filteredBrandSecond = newsData.secondCategory.filter(function (item) {
-  //   if (typeof item.subcategories === 'string') {
-  //     return item.subcategories === 'brand';
-  //   } else if (Array.isArray(item.subcategories)) {
-  //     return item.subcategories.includes('brand');
-  //   }
-  //   return false;
-  // });
-
-  const filteredProductsSecond = newsData.secondCategory.filter(function (item) {
-    if (typeof item.subcategories === 'string') {
-      return item.subcategories === 'products&tech';
-    } else if (Array.isArray(item.subcategories)) {
-      return item.subcategories.includes('products&tech');
-    }
-    return false;
-  });
-
-  const filteredEventsSecond = newsData.secondCategory.filter(function (item) {
-    if (typeof item.subcategories === 'string') {
-      return item.subcategories === 'events';
-    } else if (Array.isArray(item.subcategories)) {
-      return item.subcategories.includes('events');
-    }
-    return false;
-  });
-
-  const filteredReviewsSecond = newsData.secondCategory.filter(function (item) {
-    if (typeof item.subcategories === 'string') {
-      return item.subcategories === 'reviews';
-    } else if (Array.isArray(item.subcategories)) {
-      return item.subcategories.includes('reviews');
-    }
-    return false;
-  });
-
-  // From third category
-  const filteredBrandThird = newsData.thirdCategory.filter(function (item) {
+  const filteredBrand = sortedDataDesc.filter(function (item) {
     if (typeof item.subcategories === 'string') {
       return item.subcategories === 'brand';
     } else if (Array.isArray(item.subcategories)) {
@@ -158,16 +140,16 @@ export default function NewsPage() {
     return false;
   });
 
-  // const filteredProductsThird = newsData.thirdCategory.filter(function (item) {
-  //   if (typeof item.subcategories === 'string') {
-  //     return item.subcategories === 'products&tech';
-  //   } else if (Array.isArray(item.subcategories)) {
-  //     return item.subcategories.includes('products&tech');
-  //   }
-  //   return false;
-  // });
+  const filteredProducts = sortedDataDesc.filter(function (item) {
+    if (typeof item.subcategories === 'string') {
+      return item.subcategories === 'products&tech';
+    } else if (Array.isArray(item.subcategories)) {
+      return item.subcategories.includes('products&tech');
+    }
+    return false;
+  });
 
-  const filteredEventsThird = newsData.thirdCategory.filter(function (item) {
+  const filteredEvents = sortedDataDesc.filter(function (item) {
     if (typeof item.subcategories === 'string') {
       return item.subcategories === 'events';
     } else if (Array.isArray(item.subcategories)) {
@@ -176,7 +158,7 @@ export default function NewsPage() {
     return false;
   });
 
-  const filteredReviewsThird = newsData.thirdCategory.filter(function (item) {
+  const filteredReviews = sortedDataDesc.filter(function (item) {
     if (typeof item.subcategories === 'string') {
       return item.subcategories === 'reviews';
     } else if (Array.isArray(item.subcategories)) {
@@ -194,23 +176,20 @@ export default function NewsPage() {
 
   const limit = 6;
 
-  const totalData = (newsData.secondCategory.length + newsData.thirdCategory.length);
-  const totalDataBrand = (newsData.secondCategory.length + filteredBrandThird.length);
-  const totalDataProducts = (newsData.thirdCategory.length + filteredProductsSecond.length);
+  const totalData = (sortedDataDesc.length);
+  const totalDataBrand = (filteredBrand.length);
+  const totalDataProducts = (filteredProducts.length);
 
   const totalCategoryData = Math.ceil(totalData / limit);
   const totalBrandCategoryData = Math.ceil(totalDataBrand / limit);
   const totalProductsCategoryData = Math.ceil(totalDataProducts / limit);
 
-  // Combined News Data
-  const copySecondData = newsData.secondCategory.slice();
-  const copySecondProductsData = filteredProductsSecond.slice();
-  const copyThirdData = newsData.thirdCategory.slice();
-  const copyThirdBrandData = filteredBrandThird.slice();
-
-  const consolidatedData = [...copySecondData, ...copyThirdData];
-  const consolidatedBrandData = [...copySecondData, ...copyThirdBrandData];
-  const consolidatedProductsData = [...copySecondProductsData, ...copyThirdData];
+  // Shallow copy of the data to mutate
+  const consolidatedData = sortedDataDesc.slice();
+  const consolidatedBrandData = filteredBrand.slice();
+  const consolidatedProductsData = filteredProducts.slice();
+  const consolidatedEventsData = filteredEvents.slice();
+  const consolidatedReviewsData = filteredReviews.slice();
 
   // =================================================================================
 
@@ -363,6 +342,8 @@ export default function NewsPage() {
     setOutputDataMarch(newData);
   }, [currentLimitMarch]);
 
+  console.log(sortedDataDesc);
+
   // =================================================================================
 
   return (
@@ -370,17 +351,23 @@ export default function NewsPage() {
       <section className="bg-white min-h-[calc(100vh-115px)]">
         <div className="pt-[60px]">
           <div className="pb-20 lg:flex">
+
             <div className="flex-7 articleImage">
-              <img className='h-full' src="/articleImages/brands__1.jpg" alt="" />
+              {/* Aspect ratio to fix cause it's not dynamic right now */}
+              <img className='md:aspect-[5/4] w-full' src={`${sortedDataDesc[0].img}`} alt="" />
             </div>
             <div className="flex-6 flex items-center bg-[#323237] text-white sm:mt-[-4px] lg:mt-0">
               <div className="w-10/12 mx-auto py-16">
-                <div className="text-body3-white pb-4">21-03-2023</div>
-                <div className="text-h2 leading-none pb-8">Launched: Blueshark R1 Smart EV Scooter – 2 Variants, 110 KM Range, From RM7,190</div>
-                <div className="text-body2-white leading-tight pb-8">
-                  The local two-wheeled electric mobility space has grown today as the Blueshark brand marks its official entry. The brand, which is a subsidiary of Sharkgulf Technologies Group, launched its R1 smart EV scooter earlier today, which is available in two guises – R1 and R1 Lite.
+                <div className="text-body3-white pb-4"></div>
+                <div className="text-h2 leading-none pb-8">{sortedDataDesc[0].description}
                 </div>
-                <a href="https://www.caricarz.com/en/news/launched-blueshark-r1-smart-ev-scooter-2-variants-110-km-range-from-rm7190/6519" target="_blank" rel="noreferrer">
+                {/* Paragraph below is not dynamic as well */}
+                <div className="text-body2-white leading-tight pb-8">
+                  Smart OPEX management with Blueshark’s Leasing Programme.
+                  <br /><br />
+                  The Blueshark Leasing Programme was designed to provide businesses with the ability to jumpstart their logistic operations at a more modest expense compared to traditional fleet management.
+                </div>
+                <a href={`${sortedDataDesc[0].link}`} target="_blank" rel="noreferrer">
                   <button className="text-button text-white hover:text-black cta bg-transparent hover:bg-white border-2 border-white font-bold transition ease-in duration-200">
                     Read More
                   </button>
@@ -426,7 +413,8 @@ export default function NewsPage() {
                 setFifthTab(false);
                 toggleFirstCategory();
               }}
-              className={`${firstTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+              className={`${firstTab ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'} p-[15px] rounded-[1rem] cursor-pointer`}
             >
               All
             </div>
@@ -439,7 +427,8 @@ export default function NewsPage() {
                 setFifthTab(false);
                 toggleSecondCategory();
               }}
-              className={`${secondTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+              className={`${secondTab ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'} p-[15px] rounded-[1rem] cursor-pointer`}
             >
               Brand
             </div>
@@ -452,7 +441,8 @@ export default function NewsPage() {
                 setFifthTab(false);
                 toggleThirdCategory();
               }}
-              className={`${thirdTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+              className={`${thirdTab ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'} p-[15px] rounded-[1rem] cursor-pointer`}
             >
               Products & Tech
             </div>
@@ -465,7 +455,8 @@ export default function NewsPage() {
                 setFifthTab(false);
                 toggleFourthCategory();
               }}
-              className={`${fourthTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+              className={`${fourthTab ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'} p-[15px] rounded-[1rem] cursor-pointer`}
             >
               Events
             </div>
@@ -478,7 +469,8 @@ export default function NewsPage() {
                 setFifthTab(true);
                 toggleFifthCategory();
               }}
-              className={`${fifthTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+              className={`${fifthTab ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'} p-[15px] rounded-[1rem] cursor-pointer`}
             >
               Reviews
             </div>
@@ -556,16 +548,7 @@ export default function NewsPage() {
                     {/* Events category */}
                     {fourthCategory && (
                       <>
-                        {filteredEventsSecond.map(function (data) {
-                          return (
-                            <a id={data.id} key={data.id} href={data.link} className={`${resetCategory ? 'block' : 'hidden'}`} target="_blank" rel="noreferrer">
-                              <div className={`rounded-[1rem] overflow-hidden h-full`}>
-                                <News day={data.date} img={data.img} description={data.description} source={data.source} />
-                              </div>
-                            </a>
-                          );
-                        })}
-                        {filteredEventsThird.map(function (data) {
+                        {consolidatedEventsData.map(function (data) {
                           return (
                             <a id={data.id} key={data.id} href={data.link} className={`${resetCategory ? 'block' : 'hidden'}`} target="_blank" rel="noreferrer">
                               <div className={`rounded-[1rem] overflow-hidden h-full`}>
@@ -580,16 +563,7 @@ export default function NewsPage() {
                     {/* Reviews category */}
                     {fifthCategory && (
                       <>
-                        {filteredReviewsSecond.map(function (data) {
-                          return (
-                            <a id={data.id} key={data.id} href={data.link} className={`${resetCategory ? 'block' : 'hidden'}`} target="_blank" rel="noreferrer">
-                              <div className={`rounded-[1rem] overflow-hidden h-full`}>
-                                <News day={data.date} img={data.img} description={data.description} source={data.source} />
-                              </div>
-                            </a>
-                          );
-                        })}
-                        {filteredReviewsThird.map(function (data) {
+                        {consolidatedReviewsData.map(function (data) {
                           return (
                             <a id={data.id} key={data.id} href={data.link} className={`${resetCategory ? 'block' : 'hidden'}`} target="_blank" rel="noreferrer">
                               <div className={`rounded-[1rem] overflow-hidden h-full`}>

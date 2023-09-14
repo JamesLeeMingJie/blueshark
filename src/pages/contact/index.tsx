@@ -55,6 +55,10 @@ const ContactPage: NextPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
+
+  console.log(number);
+  console.log(typeof number);
+
   const [topic, setTopic] = useState('');
   const [message, setMessage] = useState('');
   const currentTimeDate = new Date().toLocaleString('en-GB');
@@ -202,7 +206,7 @@ const ContactPage: NextPage = () => {
                   setState(e.target.value);
                 }}
               >
-                <option value="">[ PLEASE SELECT ]</option>
+                <option value="">[ LOCATION ]</option>
                 {/* <option value="JOHOR">JOHOR</option> */}
                 {/* <option value="KEDAH">KEDAH</option> */}
                 <option value="KELANTAN">KELANTAN</option>
@@ -230,7 +234,11 @@ const ContactPage: NextPage = () => {
               setSecondTab(false);
               setThirdTab(false);
             }}
-            className={`${firstTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+            className={`${
+              firstTab
+                ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'
+            } p-[15px] rounded-[1rem] cursor-pointer`}
           >
             Display
           </div>
@@ -240,7 +248,11 @@ const ContactPage: NextPage = () => {
               setSecondTab(true);
               setThirdTab(false);
             }}
-            className={`${secondTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+            className={`${
+              secondTab
+                ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'
+            } p-[15px] rounded-[1rem] cursor-pointer`}
           >
             Test available
           </div>
@@ -250,7 +262,11 @@ const ContactPage: NextPage = () => {
               setSecondTab(false);
               setThirdTab(true);
             }}
-            className={`${thirdTab ? 'bg-[#F6F6F6]' : 'bg-white'} p-[15px] rounded-[1rem] cursor-pointer`}
+            className={`${
+              thirdTab
+                ? 'bg-gray-400 text-white'
+                : 'hover:bg-gray-100 hover:text-white bg-white transition ease-in duration-200'
+            } p-[15px] rounded-[1rem] cursor-pointer`}
           >
             Workshop
           </div>
@@ -356,10 +372,10 @@ const ContactPage: NextPage = () => {
           </div>
         </div> */}
 
-        <div className="mx-auto w-10/12 md:w-8/12 bg-[#F6F6F6] p-8 h-[450px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-[1rem] scrollbar-thumb-[#CFCFCF] relative">
+        <div className="mx-auto w-10/12 lg:w-8/12 bg-[#F6F6F6] p-8 h-[450px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-[1rem] scrollbar-thumb-[#CFCFCF] relative">
           <input
             className="text-base shadow-lg p-4 mb-12 sm:w-full lg:w-[350px] border-primary border-[1.5px] rounded-[8px] sticky top-0"
-            placeholder="Search for your Blueshark.."
+            placeholder="Search by name or address..."
             value={searchTerm}
             onChange={handleInputChange}
           />
@@ -381,12 +397,12 @@ const ContactPage: NextPage = () => {
                         <p className="text-body3">{item.address}</p>
                       </a>
                       {item.contact_no ? (
-                        <p className="text-[16px] pb-4 flex items-center">
+                        <a className="text-[16px] pb-4 flex items-center" href={`tel:${item.contact_no}`}>
                           <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
                             <BsTelephone />
                           </span>
                           {item.contact_no}
-                        </p>
+                        </a>
                       ) : (
                         ''
                       )}
@@ -394,7 +410,7 @@ const ContactPage: NextPage = () => {
                       {item.operation_hours ? (
                         <p className="text-[16px] pb-4 flex items-center">
                           <span className="mr-4 text-primary text-[32px]">
-                            <HiOutlineBuildingStorefront />
+                            {item.operation_hours[0] === '' ? '' : <HiOutlineBuildingStorefront />}
                           </span>
                           <div>
                             {item.operation_hours.length === 1
@@ -437,21 +453,31 @@ const ContactPage: NextPage = () => {
                         <p className="text-body3">{item.address}</p>
                       </a>
                       {item.contact_no ? (
-                        <p className="text-[16px] pb-4 flex items-center">
+                        <a className="text-[16px] pb-4 flex items-center" href={`tel:${item.contact_no}`}>
                           <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
                             <BsTelephone />
                           </span>
                           {item.contact_no}
-                        </p>
+                        </a>
                       ) : (
                         ''
                       )}
                       {item.operation_hours ? (
                         <p className="text-[16px] pb-4 flex items-center">
                           <span className="mr-4 text-primary text-[32px]">
-                            {item.operation_hours ? <HiOutlineBuildingStorefront /> : ''}
+                            {item.operation_hours[0] === '' ? '' : <HiOutlineBuildingStorefront />}
                           </span>
-                          {item.operation_hours}
+                          <div>
+                            {item.operation_hours.length === 1
+                              ? item.operation_hours
+                              : item.operation_hours.map(function (item: any) {
+                                  return (
+                                    <>
+                                      <div>{item}</div>
+                                    </>
+                                  );
+                                })}
+                          </div>
                         </p>
                       ) : (
                         ''
@@ -482,21 +508,31 @@ const ContactPage: NextPage = () => {
                         <p className="text-body3">{item.address}</p>
                       </a>
                       {item.contact_no ? (
-                        <p className="text-[16px] pb-4 flex items-center">
+                        <a className="text-[16px] pb-4 flex items-center" href={`tel:${item.contact_no}`}>
                           <span className="mr-4 p-[5px] text-[18px] text-primary border-primary border-2 rounded-[15px]">
                             <BsTelephone />
                           </span>
                           {item.contact_no}
-                        </p>
+                        </a>
                       ) : (
                         ''
                       )}
                       {item.operation_hours ? (
                         <p className="text-[16px] pb-4 flex items-center">
                           <span className="mr-4 text-primary text-[32px]">
-                            {item.operation_hours ? <HiOutlineBuildingStorefront /> : ''}
+                            {item.operation_hours[0] === '' ? '' : <HiOutlineBuildingStorefront />}
                           </span>
-                          {item.operation_hours}
+                          <div>
+                            {item.operation_hours.length === 1
+                              ? item.operation_hours
+                              : item.operation_hours.map(function (item: any) {
+                                  return (
+                                    <>
+                                      <div>{item}</div>
+                                    </>
+                                  );
+                                })}
+                          </div>
                         </p>
                       ) : (
                         ''
@@ -509,17 +545,19 @@ const ContactPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-white sm:pt-20 sm:pb-20 lg:pt-0 lg:pb-0 h-fit lg:h-screen 3xl:h-[calc(100vh-115px)]">
+      {/* lg:h-screen 3xl:h-[calc(100vh-115px)] */}
+
+      <section className="bg-white py-28">
         <div className="h-full flex items-center">
-          <div className="sm:w-10/12 lg:w-8/12 mx-auto flex sm:flex-col lg:flex-row items-start gap-x-20">
-            <div className="sm:w-full lg:w-1/2 min-w-[50%] lg:mr-8 sm:pb-12 lg:pb-0">
+          <div className="sm:w-10/12 lg:w-8/12 mx-auto grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-x-32">
+            <div className="sm:pb-12 lg:pb-0">
               <div className="w-full mx-auto">
                 <div className="h-full flex sm:flex-col lg:flex-row text-white">
                   {/* <div className="flex-4" id="bikeImage">
                     <Image src={contactBikes} alt="" />
                   </div> */}
                   <div className="flex flex-8 flex-col bg-[#FBF5FF] text-body3 text-left sm:p-16 3xl:p-20 text-body2 gap-y-12">
-                    <div className="text-h3 leading-tight">Book your test ride today</div>
+                    <div className="text-h3 leading-tight">Book your test ride today at Blueshark Glenmarie</div>
                     <div>
                       <div className="flex border-b-2 w-full border-[#808080] items-center"></div>
                     </div>
@@ -569,7 +607,7 @@ const ContactPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="sm:w-full lg:w-1/2 min-w-[50%] lg:ml-8">
+            <div className="sm:w-full">
               <form onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-y-12">
                   <div className="text-left w-full">
@@ -630,8 +668,12 @@ const ContactPage: NextPage = () => {
                     <div className="text-h4-blue">Phone</div>
                     <input
                       value={number}
-                      type={'number'}
-                      onChange={(e) => setNumber(e.target.value)}
+                      type={'text'}
+                      onChange={(e) => {
+                        const inputValue = e.target.value;
+                        const numericValue = inputValue.replace(/[^0-9]/g, '');
+                        setNumber(numericValue);
+                      }}
                       autoComplete="off"
                       id="phone"
                       placeholder="+601xxxx xxxx"

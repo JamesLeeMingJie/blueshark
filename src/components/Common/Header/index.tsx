@@ -133,7 +133,7 @@ export const Header = ({
           <div>
             <Link key={'/contact'} href="/contact">
               <a
-                className={`hidden xl:block cta border-2 border-transparent hover:border-white hover:bg-white hover:text-black transition ease-in duration-200 text-[16px] cursor-default lg:mt-0 font-medium ${
+                className={`hidden xl:block cta border-2 border-transparent hover:border-white hover:bg-white hover:text-black transition ease-in duration-200 text-[16px] cursor-default lg:mt-0 font-medium text-center ${
                   activePage(router.pathname, '/contact')
                     ? 'text-white'
                     : `${router.pathname === '/' ? 'contact__navText' : 'text-white'}`

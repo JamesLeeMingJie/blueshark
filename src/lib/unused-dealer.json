@@ -58,6 +58,73 @@
       "contact_no": "03-7972 1452",
       "workshop": "yes",
       "test_ride": "no"
+    },
+    {
+      "use-below": "=========="
+    },
+    {
+      "id": 7,
+      "dealer": "Mr. Jimmy",
+      "company_name": "Y.S Chong Motor Trd Sdn Bhd",
+      "address": "No.606, Jalan SS9A/13, Seri Setia (Sg. Way) 47300 Petaling Jaya, Selangor",
+      "location": [
+        "https://goo.gl/maps/WYXB4m4FfcthBddK6"
+      ],
+      "contact_no": "03-7876 1114",
+      "workshop": "yes",
+      "test_ride": "yes",
+      "state": "SELANGOR",
+      "operation_hours": [
+        "830am - 6pm Daily except Sunday"
+      ]
+    },
+    {
+      "id": 11,
+      "dealer": "Mr. Daniel/ Azrul",
+      "company_name": "Mentara Farm Village Sdn Bhd",
+      "address": "PT 2740, Tingkat 1, Wisma Persatuan Jamaan MAsjid al-Quddus, Jln Abdul Kadir Adabi, 15250 Kota Bharu, Kelantan",
+      "location": [
+        ""
+      ],
+      "contact_no": "",
+      "workshop": "yes",
+      "test_ride": "yes",
+      "state": "KELANTAN",
+      "operation_hours": [
+        ""
+      ]
+    },
+    {
+      "id": 13,
+      "dealer": "Mr Chris",
+      "company_name": "AiHome IOI City Mall",
+      "address": "L2-209&210, Second Floor, IOI City Mall 2, Lebuh IRC, IOI Resort City, 62502 Sepang, Wilayah Persekutuan Putrajaya",
+      "location": [
+        "https://goo.gl/maps/1kHNdYYspguW1mMH8"
+      ],
+      "contact_no": "012-675 4663",
+      "workshop": "no",
+      "test_ride": "no",
+      "state": "WP PUTRAJAYA",
+      "operation_hours": [
+        "10am - 10pm Daily"
+      ]
+    },
+    {
+      "id": 16,
+      "dealer": "Fazmim",
+      "company_name": "Koperasi TNB-Bazaria",
+      "address": "No 96, Jalan Bangsar, Wisma Koperasi TNB, 59200 Kuala Lumpur.",
+      "location": [
+        "https://goo.gl/maps/tGP7ZfkfkGGVytA46"
+      ],
+      "contact_no": "03-2282 1324",
+      "workshop": "no",
+      "test_ride": "no",
+      "state": "WP KUALA LUMPUR",
+      "operation_hours": [
+        ""
+      ]
     }
   ]
 }

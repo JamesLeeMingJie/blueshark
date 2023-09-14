@@ -176,10 +176,14 @@ th, td {
 }
 
 /* Text decoration */
+.italic {
+  font-style: italic;
+}
+
 .underline {
   text-decoration: underline;
 }
 
-.italic {
-  font-style: italic;
+.word-wrap {
+  word-wrap: break-word;
 }

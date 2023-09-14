@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 import { BsLink45Deg, BsFacebook, BsLinkedin, BsTwitter } from 'react-icons/bs';
 
-// import articleData from '../../../../src/lib/article-data.json';
 import styles from '../../../styles/Background.module.css';
 import Link from "next/link";
 
@@ -15,10 +14,6 @@ export default function CategorySlug({ data }) {
   const router = useRouter();
   const { category, categorySlug } = router.query;
   console.log(category, categorySlug);
-  // console.log(data);
-
-  // const data = articleData[category]?.[categorySlug];
-  // console.log(data);
 
   function handleCopy() {
     Swal.fire({
@@ -31,38 +26,19 @@ export default function CategorySlug({ data }) {
     });
   }
 
-  const shareUrl = 'https://blueshark.com.my/news/brand/blueshark-corporate-leasing-programme';
+  const shareUrl = 'https://blueshark.com.my/news/brand/effectively-manage-fleet-costs-with-blueshark-leasing-programme';
   const shareTitle = 'Blueshark Malaysia';
-
-  const mainBanner = data.mainBanner;
 
   return (
     <div>
       <Head>
         <title>{data.header}</title>
       </Head>
-      {/* <section className={`sm:hidden md:block  bg-cover bg-center bg-[url('/articleInternal/background/internal__bg-1.png')] relative`}> */}
-
-      <section className="">
-        <div className="sm:hidden md:block mt-[60px] pb-8 w-10/12 lg:w-6/12 h-fit mx-auto">
-          <Image src={mainBanner} width={"1920"} height={"1080"} alt="" />
-        </div>
-        {/* <p className='text-custom-gray pb-8'>
-          {data.byline}
-        </p> */}
-        {/* <div className='sm:hidden md:block text-center absolute left-1/2 -translate-x-1/2 bottom-[-20%] xl:bottom-[-30%] w-full md:w-8/12 lg:w-6/12 min-w-[50%] z-10'>
-          <Image src={data.mainBanner} width={"1920"} height={"1080"} alt='' />
-        </div> */}
+      <section className="sm:hidden md:block mt-[60px] pb-8 w-10/12 lg:w-6/12 h-fit mx-auto">
+        <Image src={data.mainBanner} width={"1920"} height={"1080"} alt="" />
       </section>
       <section className={`sm:block md:hidden aspect-auto`}>
-        <Image src={'/articleInternal/background/internal__bg-1.png'} width={"1920"} height={"1080"} alt="" />
-
-        {/* <div className="sm:block md:hidden pb-8">
-        </div>
-        */}
-        {/* <p className='text-custom-gray pb-8'>
-          {data.byline}
-        </p> */}
+        <Image src={data.mainBanner} width={"1920"} height={"1080"} alt="" />
         {/* <div className='sm:hidden md:block text-center absolute left-1/2 -translate-x-1/2 bottom-[-20%] xl:bottom-[-30%] w-full md:w-8/12 lg:w-6/12 min-w-[50%] z-10'>
           <Image src={data.mainBanner} width={"1920"} height={"1080"} alt='' />
         </div> */}
@@ -114,7 +90,9 @@ export default function CategorySlug({ data }) {
             </div>
           </div>
           <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
-          <div className="text-title font-bold sm:pb-12 leading-tight text-primary mx-auto">{data.articleTitle}</div>
+          <div className="text-title font-bold sm:pb-12 leading-tight text-primary mx-auto">
+            {data.articleTitle}
+          </div>
 
           {data.byline ? <p className='text-custom-gray pb-8' dangerouslySetInnerHTML={{ __html: data.byline }}></p> : ""}
 

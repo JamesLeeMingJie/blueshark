@@ -853,57 +853,5 @@
       ],
       "source": "external"
     }
-  ],
-  "fourthCategory": [
-    {
-      "id": "&1",
-      "date": "January 5, 2023",
-      "img": "/revampImages/battery-station.png",
-      "link": "/news/article/&1",
-      "description": "First dummy Blueshark article",
-      "pagination": 10
-    },
-    {
-      "id": "&2",
-      "date": "February 5, 2023",
-      "img": "/revampImages/battery-station.png",
-      "link": "/news/article/&2",
-      "description": "Second dummy Blueshark article",
-      "pagination": 10
-    },
-    {
-      "id": "&3",
-      "date": "March 5, 2023",
-      "img": "/revampImages/battery-station.png",
-      "link": "/news/article/&3",
-      "description": "Third dummy Blueshark article",
-      "pagination": 10
-    }
-  ],
-  "fifthCategory": [
-    {
-      "id": "&1",
-      "date": "January 5, 2023",
-      "img": "/revampImages/battery-station.png",
-      "link": "/news/article/&1",
-      "description": "First dummy Blueshark article",
-      "pagination": 10
-    },
-    {
-      "id": "&2",
-      "date": "February 5, 2023",
-      "img": "/revampImages/battery-station.png",
-      "link": "/news/article/&2",
-      "description": "Second dummy Blueshark article",
-      "pagination": 10
-    },
-    {
-      "id": "&3",
-      "date": "March 5, 2023",
-      "img": "/revampImages/battery-station.png",
-      "link": "/news/article/&3",
-      "description": "Third dummy Blueshark article",
-      "pagination": 10
-    }
   ]
 }
