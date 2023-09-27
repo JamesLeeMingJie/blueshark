@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import News from 'components/Common/news';
-import newsData from '../../lib/page.json';
+// import newsData from '../../lib/page(Not Used).json';
 
 import newsDataNew from '../../lib/new-page.json';
 
@@ -173,16 +173,19 @@ export default function NewsPage() {
   const [currentLimit, setCurrentLimit] = useState(0);
   const [currentLimitBrand, setCurrentLimitBrand] = useState(0);
   const [currentLimitProducts, setCurrentLimitProducts] = useState(0);
+  const [currentLimitReviews, setCurrentLimitReviews] = useState(0);
 
   const limit = 6;
 
   const totalData = (sortedDataDesc.length);
   const totalDataBrand = (filteredBrand.length);
   const totalDataProducts = (filteredProducts.length);
+  const totalDataReviews = (filteredReviews.length);
 
   const totalCategoryData = Math.ceil(totalData / limit);
   const totalBrandCategoryData = Math.ceil(totalDataBrand / limit);
   const totalProductsCategoryData = Math.ceil(totalDataProducts / limit);
+  const totalReviewsCategoryData = Math.ceil(totalDataReviews / limit);
 
   // Shallow copy of the data to mutate
   const consolidatedData = sortedDataDesc.slice();
@@ -286,9 +289,42 @@ export default function NewsPage() {
 
   // =================================================================================
 
+  const [paginationNumberReviews, setPaginationNumberReviews] = useState(1);
+  const [outputDataReviews, setOutputDataReviews] = useState([]);
+
+  const handleSubtractSixReviews = () => {
+    if (paginationNumberReviews === 1) {
+      return;
+    } else {
+      setPaginationNumberReviews((current) => current - 1);
+      setCurrentLimitReviews((prevTotal) => prevTotal - 6);
+    };
+  };
+
+  const handleAddSixReviews = () => {
+    if (paginationNumberReviews < totalReviewsCategoryData) {
+      setPaginationNumberReviews((current) => current + 1);
+      setCurrentLimitReviews((prevTotal) => prevTotal + 6);
+    } else {
+      return;
+    };
+  };
+
+  useEffect(() => {
+    const newData = [];
+    for (let i = currentLimitReviews; i < currentLimitReviews + limit && i < totalDataReviews; i++) {
+      newData.push(consolidatedReviewsData[i]);
+    }
+    setOutputDataReviews(newData);
+  }, [currentLimitReviews]);
+
+  // =================================================================================
+
   // Filtered Months
 
   const [currentLimitMarch, setCurrentLimitMarch] = useState(0);
+  const [currentLimitJuly, setCurrentLimitJuly] = useState(0);
+  const [currentLimitAugust, setCurrentLimitAugust] = useState(0);
 
   const filterMarch = consolidatedData.filter(function (mth) {
     return mth.month === 'march';
@@ -309,6 +345,8 @@ export default function NewsPage() {
   const filterSeptember = consolidatedData.filter(function (mth) {
     return mth.month === 'september';
   });
+
+  // =================================================================================
 
   const totalDataMarch = filterMarch.length;
   const totalMarchPages = Math.ceil(totalDataMarch / limit);
@@ -342,7 +380,73 @@ export default function NewsPage() {
     setOutputDataMarch(newData);
   }, [currentLimitMarch]);
 
-  console.log(sortedDataDesc);
+  // =================================================================================
+
+  const totalDataJuly = filterJuly.length;
+  const totalJulyPages = Math.ceil(totalDataJuly / limit);
+
+  const [paginationNumberJuly, setPaginationNumberJuly] = useState(1);
+  const [outputDataJuly, setOutputDataJuly] = useState([]);
+
+  const handleSubtractSixJuly = () => {
+    if (paginationNumberJuly === 1) {
+      return;
+    } else {
+      setPaginationNumberJuly((current) => current - 1);
+      setCurrentLimitJuly((prevTotal) => prevTotal - 6);
+    };
+  };
+
+  const handleAddSixJuly = () => {
+    if (paginationNumberJuly < totalJulyPages) {
+      setPaginationNumberJuly((current) => current + 1);
+      setCurrentLimitJuly((prevTotal) => prevTotal + 6);
+    } else {
+      return;
+    };
+  };
+
+  useEffect(() => {
+    const newData = [];
+    for (let i = currentLimitJuly; i < currentLimitJuly + limit && i < totalDataJuly; i++) {
+      newData.push(filterJuly[i]);
+    }
+    setOutputDataJuly(newData);
+  }, [currentLimitJuly]);
+
+  // =================================================================================
+
+  const totalDataAugust = filterAugust.length;
+  const totalAugustPages = Math.ceil(totalDataAugust / limit);
+
+  const [paginationNumberAugust, setPaginationNumberAugust] = useState(1);
+  const [outputDataAugust, setOutputDataAugust] = useState([]);
+
+  const handleSubtractSixAugust = () => {
+    if (paginationNumberAugust === 1) {
+      return;
+    } else {
+      setPaginationNumberAugust((current) => current - 1);
+      setCurrentLimitAugust((prevTotal) => prevTotal - 6);
+    };
+  };
+
+  const handleAddSixAugust = () => {
+    if (paginationNumberAugust < totalAugustPages) {
+      setPaginationNumberAugust((current) => current + 1);
+      setCurrentLimitAugust((prevTotal) => prevTotal + 6);
+    } else {
+      return;
+    };
+  };
+
+  useEffect(() => {
+    const newData = [];
+    for (let i = currentLimitAugust; i < currentLimitAugust + limit && i < totalDataAugust; i++) {
+      newData.push(filterAugust[i]);
+    }
+    setOutputDataAugust(newData);
+  }, [currentLimitAugust]);
 
   // =================================================================================
 
@@ -352,20 +456,20 @@ export default function NewsPage() {
         <div className="pt-[60px]">
           <div className="pb-20 lg:flex">
 
-            <div className="flex-7 articleImage">
+            <div className="flex-7 articleImage bg-[#323237]">
               {/* Aspect ratio to fix cause it's not dynamic right now */}
-              <img className='md:aspect-[5/4] w-full' src={`${sortedDataDesc[0].img}`} alt="" />
+              <img className='md:aspect-[3/2] w-full h-full object-contain object-top' src={`${sortedDataDesc[0].img}`} alt="" />
             </div>
             <div className="flex-6 flex items-center bg-[#323237] text-white sm:mt-[-4px] lg:mt-0">
               <div className="w-10/12 mx-auto py-16">
                 <div className="text-body3-white pb-4"></div>
                 <div className="text-h2 leading-none pb-8">{sortedDataDesc[0].description}
                 </div>
-                {/* Paragraph below is not dynamic as well */}
+                {/* Paragraph below is not dynamic */}
                 <div className="text-body2-white leading-tight pb-8">
-                  Smart OPEX management with Blueshark’s Leasing Programme.
+                  Take Advantage of Local Government Incentives and Benefits to Grow Your Business and Save Big!
                   <br /><br />
-                  The Blueshark Leasing Programme was designed to provide businesses with the ability to jumpstart their logistic operations at a more modest expense compared to traditional fleet management.
+                  In an era driven by environmental consciousness and cost-effectiveness, it is evident that local tax incentives and benefits play a crucial role in promoting the acquisition of electric vehicle (EV) fleets by businesses and individuals.
                 </div>
                 <a href={`${sortedDataDesc[0].link}`} target="_blank" rel="noreferrer">
                   <button className="text-button text-white hover:text-black cta bg-transparent hover:bg-white border-2 border-white font-bold transition ease-in duration-200">
@@ -492,11 +596,9 @@ export default function NewsPage() {
             <option value="fifthMobileCategory">Reviews</option>
           </select>
 
-          {(filterDate === '' || filterDate === 'March') && (
+          {filterDate === '' && (
             <>
-              <div className="sm:w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-20 grid sm:grid-cols-1 justify-center smToMd-grid-cols-2 md:grid-cols-3 gap-8">
-                {/* Additional cards that don't fall in any categories goes here */}
-
+              <div className="sm:w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-[15rem] grid sm:grid-cols-1 justify-center smToMd-grid-cols-2 md:grid-cols-3 gap-8 relative">
                 {firstCategory && (
                   <>
                     {outputData.map(function (data) {
@@ -563,7 +665,7 @@ export default function NewsPage() {
                     {/* Reviews category */}
                     {fifthCategory && (
                       <>
-                        {consolidatedReviewsData.map(function (data) {
+                        {outputDataReviews.map(function (data) {
                           return (
                             <a id={data.id} key={data.id} href={data.link} className={`${resetCategory ? 'block' : 'hidden'}`} target="_blank" rel="noreferrer">
                               <div className={`rounded-[1rem] overflow-hidden h-full`}>
@@ -575,6 +677,122 @@ export default function NewsPage() {
                       </>
                     )}
                   </>
+                )}
+
+                {filterDate === '' && (
+                  <div className="pb-20 absolute bottom-0 right-[50%] translate-x-[50%]">
+                    {firstCategory && (
+                      <div className="flex items-center justify-center gap-x-12 text-base">
+                        <div
+                          onClick={handleSubtractSix}
+                          className={`${currentLimit === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronLeft />
+                        </div>
+                        <div
+                          className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
+                        >
+                          {paginationNumber}
+                        </div>
+                        <div>
+                          of
+                        </div>
+                        <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
+                          {totalCategoryData}
+                        </div>
+                        <div
+                          onClick={handleAddSix}
+                          className={`${paginationNumber === totalCategoryData ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronRight />
+                        </div>
+                      </div>
+                    )}
+
+                    {secondCategory && resetCategory && (
+                      <div className="flex items-center justify-center gap-x-12 text-base">
+                        <div
+                          onClick={handleSubtractSixBrand}
+                          className={`${currentLimitBrand === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronLeft />
+                        </div>
+                        <div
+                          className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
+                        >
+                          {paginationNumberBrand}
+                        </div>
+                        <div>
+                          of
+                        </div>
+                        <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
+                          {totalBrandCategoryData}
+                        </div>
+                        <div
+                          onClick={handleAddSixBrand}
+                          className={`${paginationNumberBrand === totalBrandCategoryData ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronRight />
+                        </div>
+                      </div>
+                    )}
+
+                    {thirdCategory && resetCategory && (
+                      <div className="flex items-center justify-center gap-x-12 text-base">
+                        <div
+                          onClick={handleSubtractSixProducts}
+                          className={`${currentLimitProducts === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronLeft />
+                        </div>
+                        <div
+                          className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
+                        >
+                          {paginationNumberProducts}
+                        </div>
+                        <div>
+                          of
+                        </div>
+                        <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
+                          {totalProductsCategoryData}
+                        </div>
+                        <div
+                          onClick={handleAddSixProducts}
+                          className={`${paginationNumberProducts === totalProductsCategoryData ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronRight />
+                        </div>
+                      </div>
+                    )}
+
+                    {fifthCategory && resetCategory && (
+                      <div className="flex items-center justify-center gap-x-12 text-base">
+                        <div
+                          onClick={handleSubtractSixReviews}
+                          className={`${currentLimitReviews === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronLeft />
+                        </div>
+                        <div
+                          className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
+                        >
+                          {paginationNumberReviews}
+                        </div>
+                        <div>
+                          of
+                        </div>
+                        <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
+                          {totalReviewsCategoryData}
+                        </div>
+                        <div
+                          onClick={handleAddSixReviews}
+                          className={`${paginationNumberReviews === totalReviewsCategoryData ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                        >
+                          <GoChevronRight />
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 )}
 
               </div>
@@ -600,19 +818,49 @@ export default function NewsPage() {
               </div>
             </div>
           )}
-          {/* {filterDate === 'March' && (
-            <div className="w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-20 grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {filterDate === 'March' && (
+            <div className="w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-[15rem] grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
               {outputDataMarch.map(function (data) {
                 return (
-                  <a id={data.id} key={data.id} href={data.link} target="_blank" rel="noreferrer">
-                    <div className={`rounded-[1rem] overflow-hidden h-full`}>
+                  <a id={data.id} key={data.id} href={data.link} target='_blank' rel='noreferrer'>
+                    <div className={`rounded-[1rem] overflow-hidden block h-full`}>
                       <News day={data.date} img={data.img} description={data.description} source={data.source} />
                     </div>
                   </a>
                 );
               })}
+
+              <div className="pb-20 absolute bottom-0 right-[50%] translate-x-[50%]">
+                <div className="flex items-center justify-center gap-x-12 text-base">
+                  <div
+                    onClick={handleSubtractSixMarch}
+                    className={`${currentLimitMarch === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                  >
+                    <GoChevronLeft />
+                  </div>
+                  <div
+                    className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
+                  >
+                    {paginationNumberMarch}
+                  </div>
+                  <div>
+                    of
+                  </div>
+                  <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
+                    {totalMarchPages}
+                  </div>
+                  <div
+                    onClick={handleAddSixMarch}
+                    className={`${paginationNumberMarch === totalMarchPages ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                  >
+                    <GoChevronRight />
+                  </div>
+                </div>
+              </div>
             </div>
-          )} */}
+          )}
+
           {filterDate === 'April' && (
             <div className="w-10/12 lg:w-8/12 mx-auto pb-20 grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className={`rounded-[1rem] overflow-hidden ${secondCategory === true ? 'block' : 'hidden'}`}>
@@ -633,6 +881,7 @@ export default function NewsPage() {
               </div>
             </div>
           )}
+
           {filterDate === 'May' && (
             <div className="w-10/12 lg:w-8/12 mx-auto pb-20 grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className={`rounded-[1rem] overflow-hidden block`}>
@@ -659,9 +908,10 @@ export default function NewsPage() {
               })}
             </div>
           )}
+
           {filterDate === 'July' && (
-            <div className="w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-20 grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filterJuly.map(function (data) {
+            <div className="w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-[15rem] grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+              {outputDataJuly.map(function (data) {
                 return (
                   <a id={data.id} key={data.id} href={data.link} target='_blank' rel='noreferrer'>
                     <div className={`rounded-[1rem] overflow-hidden block h-full`}>
@@ -670,11 +920,39 @@ export default function NewsPage() {
                   </a>
                 );
               })}
+
+              <div className="pb-20 absolute bottom-0 right-[50%] translate-x-[50%]">
+                <div className="flex items-center justify-center gap-x-12 text-base">
+                  <div
+                    onClick={handleSubtractSixJuly}
+                    className={`${currentLimitJuly === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                  >
+                    <GoChevronLeft />
+                  </div>
+                  <div
+                    className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
+                  >
+                    {paginationNumberJuly}
+                  </div>
+                  <div>
+                    of
+                  </div>
+                  <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
+                    {totalJulyPages}
+                  </div>
+                  <div
+                    onClick={handleAddSixJuly}
+                    className={`${paginationNumberJuly === totalJulyPages ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                  >
+                    <GoChevronRight />
+                  </div>
+                </div>
+              </div>
             </div>
           )}
           {filterDate === 'August' && (
-            <div className="w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-20 grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filterAugust.map(function (data) {
+            <div className="w-10/12 lg:w-8/12 mx-auto 3xl:px-20 pb-[15rem] grid sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+              {outputDataAugust.map(function (data) {
                 return (
                   <a id={data.id} key={data.id} href={data.link} target='_blank' rel='noreferrer'>
                     <div className={`rounded-[1rem] overflow-hidden block h-full`}>
@@ -683,6 +961,34 @@ export default function NewsPage() {
                   </a>
                 );
               })}
+
+              <div className="pb-20 absolute bottom-0 right-[50%] translate-x-[50%]">
+                <div className="flex items-center justify-center gap-x-12 text-base">
+                  <div
+                    onClick={handleSubtractSixAugust}
+                    className={`${currentLimitAugust === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                  >
+                    <GoChevronLeft />
+                  </div>
+                  <div
+                    className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
+                  >
+                    {paginationNumberAugust}
+                  </div>
+                  <div>
+                    of
+                  </div>
+                  <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
+                    {totalAugustPages}
+                  </div>
+                  <div
+                    onClick={handleAddSixAugust}
+                    className={`${paginationNumberAugust === totalAugustPages ? 'text-gray-100' : 'text-black cursor-pointer'}`}
+                  >
+                    <GoChevronRight />
+                  </div>
+                </div>
+              </div>
             </div>
           )}
           {filterDate === 'September' && (
@@ -734,124 +1040,6 @@ export default function NewsPage() {
               </div>
             </div>
           )}
-
-          {(filterDate === '' || filterDate === 'March') && (
-            <div className="pb-20">
-              {firstCategory && (
-                <div className="flex items-center justify-center gap-x-12 text-base">
-                  <div
-                    onClick={handleSubtractSix}
-                    className={`${currentLimit === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                  >
-                    <GoChevronLeft />
-                  </div>
-                  <div
-                    className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
-                  >
-                    {paginationNumber}
-                  </div>
-                  <div>
-                    of
-                  </div>
-                  <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
-                    {totalCategoryData}
-                  </div>
-                  <div
-                    onClick={handleAddSix}
-                    className={`${paginationNumber === totalCategoryData ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                  >
-                    <GoChevronRight />
-                  </div>
-                </div>
-              )}
-
-              {secondCategory && resetCategory && (
-                <div className="flex items-center justify-center gap-x-12 text-base">
-                  <div
-                    onClick={handleSubtractSixBrand}
-                    className={`${currentLimitBrand === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                  >
-                    <GoChevronLeft />
-                  </div>
-                  <div
-                    className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
-                  >
-                    {paginationNumberBrand}
-                  </div>
-                  <div>
-                    of
-                  </div>
-                  <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
-                    {totalBrandCategoryData}
-                  </div>
-                  <div
-                    onClick={handleAddSixBrand}
-                    className={`${paginationNumberBrand === totalBrandCategoryData ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                  >
-                    <GoChevronRight />
-                  </div>
-                </div>
-              )}
-
-              {thirdCategory && resetCategory && (
-                <div className="flex items-center justify-center gap-x-12 text-base">
-                  <div
-                    onClick={handleSubtractSixProducts}
-                    className={`${currentLimitProducts === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                  >
-                    <GoChevronLeft />
-                  </div>
-                  <div
-                    className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
-                  >
-                    {paginationNumberProducts}
-                  </div>
-                  <div>
-                    of
-                  </div>
-                  <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
-                    {totalProductsCategoryData}
-                  </div>
-                  <div
-                    onClick={handleAddSixProducts}
-                    className={`${paginationNumberProducts === totalProductsCategoryData ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                  >
-                    <GoChevronRight />
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* {filterDate === 'March' && (
-            <div className="pb-20">
-              <div className="flex items-center justify-center gap-x-12 text-base">
-                <div
-                  onClick={handleSubtractSixMarch}
-                  className={`${currentLimitMarch === 0 ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                >
-                  <GoChevronLeft />
-                </div>
-                <div
-                  className={`bg-[#F6F6F6] px-[15px] py-[10px] rounded-[1rem]`}
-                >
-                  {paginationNumberMarch}
-                </div>
-                <div>
-                  of
-                </div>
-                <div className={`px-[15px] py-[10px] rounded-[1rem]`}>
-                  {totalMarchPages}
-                </div>
-                <div
-                  onClick={handleAddSixMarch}
-                  className={`${paginationNumberMarch === totalMarchPages ? 'text-gray-100' : 'text-black cursor-pointer'}`}
-                >
-                  <GoChevronRight />
-                </div>
-              </div>
-            </div>
-          )} */}
 
         </div>
       </section>

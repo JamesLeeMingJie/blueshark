@@ -57,7 +57,7 @@ const ContactPage: NextPage = () => {
   const [number, setNumber] = useState('');
 
   console.log(number);
-  console.log(typeof number);
+  // console.log(typeof number);
 
   const [topic, setTopic] = useState('');
   const [message, setMessage] = useState('');
@@ -557,7 +557,10 @@ const ContactPage: NextPage = () => {
                     <Image src={contactBikes} alt="" />
                   </div> */}
                   <div className="flex flex-8 flex-col bg-[#FBF5FF] text-body3 text-left sm:p-16 3xl:p-20 text-body2 gap-y-12">
-                    <div className="text-h3 leading-tight">Book your test ride today at Blueshark Glenmarie</div>
+                    <div className="text-h3 leading-tight">
+                      Book your test ride today at <br />
+                      Blueshark Glenmarie
+                    </div>
                     <div>
                       <div className="flex border-b-2 w-full border-[#808080] items-center"></div>
                     </div>
@@ -669,11 +672,10 @@ const ContactPage: NextPage = () => {
                     <input
                       value={number}
                       type={'text'}
-                      onChange={(e) => {
-                        const inputValue = e.target.value;
-                        const numericValue = inputValue.replace(/[^0-9]/g, '');
-                        setNumber(numericValue);
-                      }}
+                      onChange={(e) => setNumber(e.target.value)}
+                      // const inputValue = e.target.value;
+                      // const numericValue = inputValue.replace(/[^0-9]/g, '');
+                      // setNumber(numericValue);
                       autoComplete="off"
                       id="phone"
                       placeholder="+601xxxx xxxx"

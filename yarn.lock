@@ -4280,11 +4280,6 @@
   dependencies:
     "extend-shallow" "^3.0.0"
 
-"ssr-window@^4.0.2":
-  "integrity" "sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ=="
-  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-4.0.2.tgz"
-  "version" "4.0.2"
-
 "ssri@^6.0.1":
   "integrity" "sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q=="
   "resolved" "https://registry.npmjs.org/ssri/-/ssri-6.0.2.tgz"
@@ -4422,12 +4417,10 @@
   "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.7.3.tgz"
   "version" "11.7.3"
 
-"swiper@^9.4.1":
-  "integrity" "sha512-1nT2T8EzUpZ0FagEqaN/YAhRj33F2x/lN6cyB0/xoYJDMf8KwTFT3hMOeoB8Tg4o3+P/CKqskP+WX0Df046fqA=="
-  "resolved" "https://registry.npmjs.org/swiper/-/swiper-9.4.1.tgz"
-  "version" "9.4.1"
-  dependencies:
-    "ssr-window" "^4.0.2"
+"swiper@^10.3.0":
+  "integrity" "sha512-o81KZH4phL/dJxKFWpZ/zf78QxOyFMood+c86vJJO0ZeSOoniyzV8HWDsw12KOlQdm4WRxrc/6kfGImAcxcS3w=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-10.3.0.tgz"
+  "version" "10.3.0"
 
 "tailwind-scrollbar@^2.1.0":
   "integrity" "sha512-zpvY5mDs0130YzYjZKBiDaw32rygxk5RyJ4KmeHjGnwkvbjm/PszON1m4Bbt2DkMRIXlXsfNevykAESgURN4KA=="

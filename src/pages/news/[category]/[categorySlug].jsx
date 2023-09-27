@@ -26,8 +26,8 @@ export default function CategorySlug({ data }) {
     });
   }
 
-  const shareUrl = 'https://blueshark.com.my/news/brand/effectively-manage-fleet-costs-with-blueshark-leasing-programme';
-  const shareTitle = 'Blueshark Malaysia';
+  const shareUrl = `https://blueshark.com.my/news/brand/${categorySlug}`;
+  const shareTitle = `${data.header}`;
 
   return (
     <div>
@@ -115,21 +115,49 @@ export default function CategorySlug({ data }) {
           {data.paragraph1 ? <p dangerouslySetInnerHTML={{ __html: data.paragraph1 }} className='text-custom-gray pb-8'>
           </p> : ""}
 
-          {data.paragraph2 ? <p className='text-custom-gray pb-8'>
-            {data.paragraph2}
+          {data.paragraph2 ? <p dangerouslySetInnerHTML={{ __html: data.paragraph2 }} className='text-custom-gray pb-8'>
           </p> : ""}
 
           {data.embedYoutube ? <iframe className="pb-8 aspect-video w-full" src={`${data.embedYoutube}`}></iframe> : ""}
-          <p dangerouslySetInnerHTML={{ __html: data.paragraph3 }} className='text-custom-gray pb-12'>
-          </p>
+
+          {data.paragraph3 ? <p dangerouslySetInnerHTML={{ __html: data.paragraph3 }} className='text-custom-gray pb-12'>
+          </p> : ""}
 
           {data.paragraph4 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph4 }}></p> : ""}
 
           {data.subBannerTitle1 ? <div className="text-base font-bold pb-4">{data.subBannerTitle1}</div> : ""}
 
+          {data.id === 3 ? <p className='text-custom-gray pb-12'>
+            Let’s look at the current Government Benefits and Tax Incentives for business owners looking to adopt and manage a fleet of electric vehicles in the inventory.
+          </p> : ""}
+
           {data.subBanner1 ? <div className='pb-12'>
             <img src={data.subBanner1} width={900} height={500} alt='' />
           </div> : ""}
+
+          {data.id === 3 ? <>
+            <p className="text-base font-bold pb-12">Tax Incentives and Benefits for Businesses:</p>
+            <p className="text-base font-bold pb-4">1. Road Tax</p>
+            <p className='text-custom-gray pb-12'>Road tax exemption until 2024.</p>
+            <p className="text-base font-bold pb-4">2. Tax Deduction</p>
+            <p className='text-custom-gray pb-12'>Until 2025, businesses can claim up to RM300,000 in tax deductions on rental expenses for non-commercial electric vehicles.</p>
+            <p className="text-base font-bold pb-4">3. Import Tax</p>
+            <p className='text-custom-gray pb-12'>Import duty and excise duty exemption for fully-imported (CBU) electric vehicles until the end of 2025, whereas imported components for locally-assembled (CKD) electric vehicles are exempted from full-import tax until the end of 2027.</p>
+          </> : ""}
+
+          {data.contactButton && data.id === 3 ? <>
+            <div className="border-b-[1px] w-full border-[#707070] mb-12"></div>
+            <p className="text-h4 pb-8">
+              Ask us about our corporate pricing.
+            </p>
+            <Link href="/r-series/form">
+              <button
+                className="text-button text-primary hover:text-white bg-transparent hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold mb-8"
+              >
+                Get in Touch
+              </button>
+            </Link>
+          </> : ""}
 
           {data.paragraph5 ? <p className='text-custom-gray pb-12' dangerouslySetInnerHTML={{ __html: data.paragraph5 }}></p> : ""}
 

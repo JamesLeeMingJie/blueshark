@@ -21,6 +21,7 @@
       "paragraph7": "With the <span class='text-black font-bold'>Blueshark Leasing Programme</span>, you can start a fleet with only just RM24,350 for the same number of bikes. This would mean your starting Capex will only be 6% of the RM400,000 cost of purchasing a fleet inventory of ICE bikes. Our monthly subscription plan for a bike starts <span class='underline'>as low as RM 487 per month.</span>",
       "paragraph8": "When it comes to the Blueshark Leasing Programme— the choice is clear. Businesses no longer have to worry about being locked into long-term contracts or committing to a fixed fleet size. Instead, our programme provides businesses with the flexibility to pause their subscription and to adjust their fleet size based on their specific needs or market demands. This allows them to adapt and respond quickly to changes in their industry or market conditions.",
       "paragraph9": "With our leasing model, the same budget can be used for more meaningful business activities, such as business expansion or for business operations. Blueshark allows organisations of all sizes (small, medium or large enterprises) to engage fleet management in a more cost-effective way.",
+      "paragraph10": "If you're not yet caught up or want to learn more about <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/effectively-manage-fleet-costs-with-blueshark-leasing-programme'>Opex Management</a> and <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/a-guide-to-malaysia&apos;s-tax-incentives-and-benefits-for-businesses-using-blueshark&apos;s-leasing-programme'>Tax incentives & Benefits</a> when starting your own fleet inventory, check out other articles.",
       "secondaryParagraphTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     "effectively-manage-fleet-costs-with-blueshark-leasing-programme": {
@@ -48,7 +49,34 @@
       "subBanner3": "/articleInternal/sub-banner/sub__banner-5.png",
       "paragraph9": "On top of all of that Blueshark also offers businesses real-time visibility on your operations with our <span class='italic'>Blueshark App.</span>",
       "paragraph10": "In summary, by choosing the Blueshark Leasing Programme, you can effectively manage your operational expenditure while enjoying the benefits of a well-maintained and optimised vehicle fleet. This translates into significant cost savings, improved efficiency, and peace of mind for your business.",
-      "paragraph11": "We’ve also covered Capex Management in this series, check them out here: <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/blueshark-corporate-leasing-programme'>Start your Fleet for Less with Blueshark’s Corporate Leasing Programme</a>"
+      "paragraph11": "If you're not yet caught up or want to learn more about <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/blueshark-corporate-leasing-programme'>Capital Expenditures</a> and <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/a-guide-to-malaysia&apos;s-tax-incentives-and-benefits-for-businesses-using-blueshark&apos;s-leasing-programme'>Tax incentives & Benefits</a> when starting your own fleet inventory, check out other articles."
+    },
+    "a-guide-to-malaysia's-tax-incentives-and-benefits-for-businesses-using-blueshark's-leasing-programme": {
+      "id": 3,
+      "header": "A Guide to Malaysia’s Tax Incentives and Benefits for Businesses Using Blueshark’s Leasing Programme",
+      "byline": "Take Advantage of Local Government Incentives and Benefits to Grow Your Business and Save Big!",
+      "articleTitle": "A Guide to Malaysia’s Tax Incentives and Benefits for Businesses Using Blueshark’s Leasing Programme",
+      "mainBanner": "/articleInternal/background/internal__bg-3.jpg",
+      "date": "September 26, 2023",
+      "paragraphTitle": "In an era driven by environmental consciousness and cost-effectiveness, it is evident that local tax incentives and benefits play a crucial role in promoting the acquisition of electric vehicle (EV) fleets by businesses and individuals.",
+      "contactButton": true,
+      "paragraph1": "Understanding these incentives is crucial for businesses seeking more sustainable and economical transportation solutions. From tax exemptions and favourable depreciation rules to reduced operating costs, these incentives make the transition to electric vehicles an economically and environmentally sound decision for businesses of all sizes.",
+      "paragraph2": "As EV adoption becomes a priority for the Malaysian government as manifested in the <a class='text-primary font-bold' href='https://rmke12.ekonomi.gov.my/en'>12th Malaysia Plan</a> to make our country a carbon-neutral nation by 2050, this initiative promotes the opportunity to adopt EVs into the future business model through multiple incentives and benefits to the business owner. <br><br> <span class='text-black font-bold'>The Blueshark Leasing Programme</span> was designed to provide businesses with the ability to jumpstart their logistic operations at a more modest expense compared to traditional fleet management.",
+      "embedYoutube": "https://www.youtube.com/embed/TNBcQlGOPP0",
+      "paragraph3": "",
+      "paragraph4": "",
+      "subBannerTitle1": "Government EV Incentives",
+      "subBanner1": "/articleInternal/sub-banner/sub__banner-6.jpg",
+      "paragraph5": "",
+      "paragraph6": "",
+      "subBannerTitle2": "Tax Incentives and Benefits for Individuals:",
+      "subBanner2": "/articleInternal/sub-banner/sub__banner-7.png",
+      "paragraph7": "The government also offers personal income tax reliefs for individual EV owners which includes being exempted from personal income tax for up to RM2,500 for costs related to EV-charging hardware and services until the end of 2023.",
+      "paragraph8": "To recap, businesses and individuals can save more by leveraging these government incentives and tax benefits whilst collectively contributing towards the country’s goal of reducing its carbon footprint.",
+      "subBanner3": "/articleInternal/sub-banner/sub__banner-8.png",
+      "paragraph9": "The choice is clear—Embrace the future of sustainable transportation with the Blueshark Leasing Programme and reap the rewards of a greener, more cost-effective fleet.",
+      "paragraph10": "This concludes our article series exploring the benefits of Blueshark's Leasing Program. If you're not yet caught up or want to learn more about <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/blueshark-corporate-leasing-programme'>Capital Expenditures</a> and <a class='text-primary font-bold' href='https://blueshark.com.my/news/brand/effectively-manage-fleet-costs-with-blueshark-leasing-programme'>Operational Expenditures</a> when starting your own fleet inventory, check out our previous articles.",
+      "paragraph11": ""
     }
   }
 }

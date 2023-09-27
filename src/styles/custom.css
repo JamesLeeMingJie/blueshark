@@ -79,6 +79,11 @@ th, td {
   color: #30629F;
 }
 
+/***** Swiper *****/
+.swiper-slide img {
+  object-fit: contain !important;
+}
+
 /***** Utilities *****/
 
 /* Fonts */

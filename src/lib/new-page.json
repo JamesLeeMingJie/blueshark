@@ -681,6 +681,16 @@
     "source": "internal"
   },
   {
+    "id": "brands__53",
+    "date": "26-09-2023",
+    "month": "september",
+    "img": "/articleImages/2023/september/brands__3.png",
+    "link": "/news/brand/a-guide-to-malaysia's-tax-incentives-and-benefits-for-businesses-using-blueshark's-leasing-programme",
+    "description": "A Guide to Malaysia’s Tax Incentives and Benefits for Businesses Using Blueshark’s Leasing Programme",
+    "subcategories": "brand",
+    "source": "internal"
+  },
+  {
     "id": "products__1",
     "date": "21-03-2023",
     "month": "march",
@@ -846,6 +856,270 @@
     "description": "A promising electric bike with a combination of traditional bike elements and modern electric technology.",
     "subcategories": [
       "products&tech",
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__1",
+    "date": "22-06-2023",
+    "month": "june",
+    "img": "/articleImages/2023/june/reviews__1.jpg",
+    "link": "https://www.caricarz.com/bm/news/blueshark-r1-canggih-comel-moden/7832?fbclid=IwAR0_W6xkdJ0b9b4y1_g9KdvhwUbTXSPwtKlj9yCMp7l34cJNO7Dbv__R6VI",
+    "description": "Blueshark R1: Canggih, Comel, Moden",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__2",
+    "date": "21-07-2023",
+    "month": "july",
+    "img": "/articleImages/2023/july/reviews__1.jpg",
+    "link": "https://www.carsifu.my/bike-reviews/blueshark-r1-urban-ride-on-a-charge",
+    "description": "Blueshark R1: Urban ride on a charge",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__3",
+    "date": "07-09-2023",
+    "month": "september",
+    "img": "/articleImages/2023/september/reviews__1.png",
+    "link": "https://www.youtube.com/watch?v=sbrYWihJx50&ab_channel=EngearTV",
+    "description": "Blueshark R1 : Scooter Electric Yang Boleh Tukar Bateri - Pandu Engear",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__4",
+    "date": "04-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__1.png",
+    "link": "https://www.facebook.com/watch/?v=316024400862037&extid=CL-UNK-UNK-UNK-AN_GK0T-GK1C&mibextid=Nif5oz&ref=sharing",
+    "description": "First Impression: Blueshark R1",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__5",
+    "date": "21-07-2023",
+    "month": "july",
+    "img": "/articleImages/2023/july/reviews__2.png",
+    "link": "https://www.tiktok.com/@pandulaju/video/7258175479109209345",
+    "description": "Akhirnya, ada juga R1 mampu milik/rahmah. Apa lagi korang nak tahu pasal Blueshark R1 ni?",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__6",
+    "date": "22-07-2023",
+    "month": "july",
+    "img": "/articleImages/2023/july/reviews__3.png",
+    "link": "https://vt.tiktok.com/ZSLuqjGXT/",
+    "description": "Replying to @nizam Ijam nah ini riding impression untuk Blueshark R1 ni. Boleh tahan!",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__7",
+    "date": "22-07-2023",
+    "month": "july",
+    "img": "/articleImages/2023/july/reviews__4.png",
+    "link": "https://vt.tiktok.com/ZSLgsgMgN/",
+    "description": "Replying to @Idaham nak tukar bateri pun laju! Cuma RM1.95 per swap!",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__8",
+    "date": "23-07-2023",
+    "month": "july",
+    "img": "/articleImages/2023/july/reviews__5.png",
+    "link": "https://vt.tiktok.com/ZSLgsTseB/",
+    "description": "Replying to @V terima kasih! Ini riding impression kami untuk waktu malam pula",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__9",
+    "date": "19-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__2.png",
+    "link": "https://vt.tiktok.com/ZSLsfYoEJ/",
+    "description": "Fuhhh lain maciam scooter elektrik terbaru ni! Ini baru premium 💪🏻 Korang rasa macam mana?",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__10",
+    "date": "22-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__3.png",
+    "link": "https://www.youtube.com/watch?v=vTllrLX4GjY&ab_channel=SiakapKeli",
+    "description": "Teknologi Masa Depan Scooter EV di Malaysia?!",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__11",
+    "date": "29-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__4.jpg",
+    "link": "https://imotorbike.my/news/en/2023/08/blueshark-r1-swappable-batteries-and-high-tech-marvels/",
+    "description": "Blueshark R1: Swappable Batteries and High-Tech Marvels",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__12",
+    "date": "21-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__5.png",
+    "link": "https://www.tiktok.com/@soyacincautiktok/video/7269694359191211282?is_from_webapp=1&sender_device=pc",
+    "description": "Blueshark R1 electric scooter: How different is it VS a normal bike",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__13",
+    "date": "23-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__6.png",
+    "link": "https://www.tiktok.com/@soyacincautiktok/video/7270369018152783111?q=soyacincau%20blueshark&t=1692678486651",
+    "description": "Blueshark R1 Electric Scooter: First time trying battery swap",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__14",
+    "date": "23-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__7.png",
+    "link": "https://www.tiktok.com/@soyacincautiktok/video/7270423019510697234?q=soyacincau%20blueshark&t=1692678486651",
+    "description": "Blueshark R1 Electric Scooter: How battery swapping works",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__15",
+    "date": "25-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__8.png",
+    "link": "https://www.tiktok.com/@soyacincautiktok/video/7271096382428040456?q=soyacincau%20blueshark&t=1692678486651",
+    "description": "Blueshark R1: Macam mana nak cas bateri motor elektrik?",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__16",
+    "date": "25-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__9.png",
+    "link": "https://www.tiktok.com/@soyacincautiktok/video/7271164415876058370?q=soyacincau%20blueshark&t=1692678486651",
+    "description": "Charge BlueShark R1 batteries at home",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__17",
+    "date": "30-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__10.png",
+    "link": "https://www.youtube.com/watch?v=qX5s890ZcCU&ab_channel=SoyaCincauBM",
+    "description": "Blueshark R1: Berbaloi ke beli skuter elektrik?",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__18",
+    "date": "31-03-2023",
+    "month": "march",
+    "img": "/articleImages/2023/march/reviews__1.png",
+    "link": "https://www.youtube.com/watch?v=h36x9Ue-Cl0&t=18s",
+    "description": "Malaysian Olympic Medalist Dato Azizul Takes The Blueshark R1 to The Track!",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__19",
+    "date": "22-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__11.png",
+    "link": "https://www.youtube.com/watch?v=DHxDxvRi1aY",
+    "description": "Armi Motovlog Rides the Blueshark R1 Smart Electric Scooter for the First Time",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__20",
+    "date": "22-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__11.png",
+    "link": "https://www.youtube.com/watch?v=0IIvREGdD4M",
+    "description": "Blueshark R1 Smart Electric Scooter: FULL REVIEW by @armimotovlog",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__21",
+    "date": "04-09-2023",
+    "month": "september",
+    "img": "/articleImages/2023/september/reviews__2.png",
+    "link": "https://www.youtube.com/watch?v=eYPOvE6IZ6c",
+    "description": "Full Review of the R1 Smart Electric Scooter | @HanifTorts",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__22",
+    "date": "29-08-2023",
+    "month": "august",
+    "img": "/articleImages/2023/august/reviews__12.png",
+    "link": "https://www.youtube.com/watch?v=gsfpSj6vFjo&list=PLc_OQ6o6t2jrPmc9E-rMgrWoU0giGiw54&index=3",
+    "description": "Pilot Programme Review | Blueshark ",
+    "subcategories": [
       "reviews"
     ],
     "source": "external"

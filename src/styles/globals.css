@@ -48,8 +48,8 @@ a {
   border-radius: 5px;
 }
 
-.bg-dark-blue-gradient {
-  background: linear-gradient(180deg, #19202d 0%, rgba(25, 32, 45, 0) 100%);
+.bg-light-blue-gradient {
+  background: linear-gradient(#b7dbff, white);
 }
 
 .latest-news .slick-slide>div {
