@@ -256,7 +256,7 @@ const ContactPage: NextPage = () => {
           >
             Test available
           </div>
-          <div
+          {/* <div
             onClick={() => {
               setFirstTab(false);
               setSecondTab(false);
@@ -269,7 +269,7 @@ const ContactPage: NextPage = () => {
             } p-[15px] rounded-[1rem] cursor-pointer`}
           >
             Workshop
-          </div>
+          </div> */}
         </div>
 
         <select
@@ -283,7 +283,7 @@ const ContactPage: NextPage = () => {
         >
           <option value="firstMobileCategory">Display</option>
           <option value="secondMobileCategory">Test available</option>
-          <option value="thirdMobileCategory">Workshop</option>
+          {/* <option value="thirdMobileCategory">Workshop</option> */}
         </select>
 
         {/* <div className="w-11/12 lg:w-8/12 mx-auto sm:py-8 md:py-12 sm:px-8 md:px-16 shadow-xl rounded-[15px] mb-12">

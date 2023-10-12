@@ -120,7 +120,7 @@ const AboutUsPage = () => {
         </div>
         <BackToTop />
       </div>
-      <section className="pb-20">
+      <section className="sm:pb-20 lg:pb-0">
         <div className="text-center text-title text-primary">Our Partners</div>
         <div className="sm:hidden lg:block w-8/12 mx-auto bg-white">
           <Swiper
@@ -134,72 +134,62 @@ const AboutUsPage = () => {
             className="mySwiper"
           >
             <SwiperSlide>
-              <div className="grid lg:grid-cols-4 gap-x-28 gap-y-20 py-20">
+              <div className="grid lg:grid-cols-4 gap-x-28 gap-y-20 sm:pb-0 lg:py-20">
                 {/* <SlideLogo imagePath={'/swiperLogos/kopetro-logo.png'} background={'black'} /> */}
 
                 <div className={``}>
-                  <img src={'/swiperLogos/kopetro-logo.png'} alt="" />
+                  <a href="https://www.kopetro.com.my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/kopetro-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/tnb-logo.png'} alt="" />
+                  <a href="https://www.tnb.com.my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/tnb-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/maxis-logo.png'} alt="" />
+                  <a href="https://www.business.maxis.com.my/en/campaign/5g-alliance/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/maxis-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div>
-                  <img src={'/swiperLogos/cimb-logo.png'} alt="" />
+                  <a
+                    href="https://www.cimb.com.my/en/personal/day-to-day-banking/sustainability-at-cimb.html"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={'/swiperLogos/cimb-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/gentari-logo.png'} alt="" />
+                  <a href="https://www.gentari.com/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/gentari-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/petronas-logo.png'} alt="" />
+                  <a href="https://www.petronas.com/sustainability" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/petronas-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/grab-logo.png'} alt="" />
+                  <a href="https://www.grab.com/my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/grab-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/tsg-logo.png'} alt="" />
+                  <a href="http://www.mytsg.com.my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/tsg-logo.png'} alt="" />
+                  </a>
                 </div>
               </div>
             </SwiperSlide>
-
-            {/* <SwiperSlide><div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 py-20 "></div></SwiperSlide> */}
-            {/* <SwiperSlide>
-              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 py-20 ">
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-                <div>
-                  <Image src={placeholderImage} alt="" />
-                </div>
-              </div>
-            </SwiperSlide> */}
           </Swiper>
         </div>
 
@@ -219,19 +209,31 @@ const AboutUsPage = () => {
                 {/* <SlideLogo imagePath={'/swiperLogos/kopetro-logo.png'} background={'black'} /> */}
 
                 <div className={``}>
-                  <img src={'/swiperLogos/kopetro-logo.png'} alt="" />
+                  <a href="https://www.kopetro.com.my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/kopetro-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/tnb-logo.png'} alt="" />
+                  <a href="https://www.tnb.com.my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/tnb-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/maxis-logo.png'} alt="" />
+                  <a href="https://www.business.maxis.com.my/en/campaign/5g-alliance/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/maxis-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div>
-                  <img src={'/swiperLogos/cimb-logo.png'} alt="" />
+                  <a
+                    href="https://www.cimb.com.my/en/personal/day-to-day-banking/sustainability-at-cimb.html"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={'/swiperLogos/cimb-logo.png'} alt="" />
+                  </a>
                 </div>
               </div>
             </SwiperSlide>
@@ -239,19 +241,27 @@ const AboutUsPage = () => {
             <SwiperSlide>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-28 gap-y-20 py-20">
                 <div className={``}>
-                  <img src={'/swiperLogos/gentari-logo.png'} alt="" />
+                  <a href="https://www.gentari.com/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/gentari-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/petronas-logo.png'} alt="" />
+                  <a href="https://www.petronas.com/sustainability" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/petronas-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/grab-logo.png'} alt="" />
+                  <a href="https://www.grab.com/my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/grab-logo.png'} alt="" />
+                  </a>
                 </div>
 
                 <div className={``}>
-                  <img src={'/swiperLogos/tsg-logo.png'} alt="" />
+                  <a href="http://www.mytsg.com.my/" target="_blank" rel="noreferrer">
+                    <img src={'/swiperLogos/tsg-logo.png'} alt="" />
+                  </a>
                 </div>
               </div>
             </SwiperSlide>

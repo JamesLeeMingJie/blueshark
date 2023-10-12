@@ -38,6 +38,52 @@ import BackToTop from '../../../components/Common/BackToTop';
 // import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import Link from "next/link";
 
+function BuyPricing() {
+  return (
+    <div className="grid grid-cols-2 md:w-[330px]">
+      <div className="border-r-2 border-[#808080]">
+        <div className="text-black text-body1">
+          R1
+        </div>
+        <div className="text-h2 leading-tight">
+          RM14,800
+        </div>
+      </div>
+      <div className="pl-8">
+        <div className="text-black text-body1">
+          R1 Lite
+        </div>
+        <div className="text-h2 leading-tight">
+          RM12,600
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RentPricing() {
+  return (
+    <div className="grid grid-cols-2 md:w-[330px]">
+      <div className="border-r-2 border-[#808080]">
+        <div className="text-black text-body1">
+          R1
+        </div>
+        <div className="text-h2 leading-tight">
+          RM9,390
+        </div>
+      </div>
+      <div className="pl-8">
+        <div className="text-black text-body1">
+          R1 Lite
+        </div>
+        <div className="text-h2 leading-tight">
+          RM7,190
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function BatteryPricing({ buyOrRent }) {
   const [popover1, setPopover1] = useState(false);
   const [popover2, setPopover2] = useState(false);
@@ -45,7 +91,7 @@ function BatteryPricing({ buyOrRent }) {
   return (
     <div>
       <div className="text-primary text-title font-bold pb-4 fadeIn">
-        {buyOrRent === "rent" ? "RM7,190" : "RM12,600"}
+        {buyOrRent === "buy" ? <BuyPricing /> : <RentPricing />}
       </div>
 
       {buyOrRent === "buy" &&
@@ -123,15 +169,12 @@ export default function PricingPage() {
                 Own the R1
               </div>
               <div className="text-black text-body2 pb-8">
-                Choose to rent or buy with batteries
+                Choose to rent or buy with batteries*
               </div>
               <div className="flex pb-8">
                 <button onClick={() => setBuyOrRent("buy")} className={`${buyOrRent === "buy" ? "bg-primary text-white" : "bg-transparent text-primary"} text-button hover:text-white hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold mr-8`}>Buy Batteries</button>
 
                 <button onClick={() => setBuyOrRent("rent")} className={`${buyOrRent === "rent" ? "bg-primary text-white" : "bg-transparent text-primary"} text-button hover:text-white hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold`}>Rent Batteries</button>
-              </div>
-              <div className="text-black text-body1">
-                From as low as
               </div>
               <BatteryPricing buyOrRent={buyOrRent} />
               <div className="sm:block mobileOnly pt-12">
@@ -142,7 +185,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="lg:h-[70vh] 3xl:pb-0 sm:pb-20 md:pb-0">
+      {/* <section className="lg:h-[70vh] 3xl:pb-0 sm:pb-20 md:pb-0">
         <div className="sm:w-full lg:w-6/12 float-left h-full flex items-center">
           <Image src={duoBikes} alt="" />
         </div>
@@ -167,7 +210,7 @@ export default function PricingPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <section className="relative">
         <div className={`lg:h-[90vh] ${styles.cimbBackground} mb-20`}>
@@ -207,7 +250,7 @@ export default function PricingPage() {
         </div>
       </section> */}
 
-      <section className="sm:w-10/12 md:w-11/12 mx-auto xl:flex items-center pb-20">
+      <section className="sm:w-10/12 md:w-11/12 mx-auto xl:flex items-center py-20">
         <div className="sm:w-7/12 md:w-3/12 3xl:w-2/12 2xl:float-left mx-auto pb-12 xl:pb-0">
           <Image
             src={batteryMain}

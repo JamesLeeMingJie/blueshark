@@ -457,8 +457,8 @@ export default function NewsPage() {
           <div className="pb-20 lg:flex">
 
             <div className="flex-7 articleImage bg-[#323237]">
-              {/* Aspect ratio to fix cause it's not dynamic right now */}
-              <img className='md:aspect-[3/2] w-full h-full object-contain object-top' src={`${sortedDataDesc[0].img}`} alt="" />
+              {/* To fix aspect ratio cause it's not dynamic right now */}
+              <img className='md:aspect-[3/2] w-full md:w-10/12 mx-auto h-full object-fill' src={`${sortedDataDesc[0].img}`} alt="" />
             </div>
             <div className="flex-6 flex items-center bg-[#323237] text-white sm:mt-[-4px] lg:mt-0">
               <div className="w-10/12 mx-auto py-16">
@@ -467,13 +467,11 @@ export default function NewsPage() {
                 </div>
                 {/* Paragraph below is not dynamic */}
                 <div className="text-body2-white leading-tight pb-8">
-                  Take Advantage of Local Government Incentives and Benefits to Grow Your Business and Save Big!
-                  <br /><br />
-                  In an era driven by environmental consciousness and cost-effectiveness, it is evident that local tax incentives and benefits play a crucial role in promoting the acquisition of electric vehicle (EV) fleets by businesses and individuals.
+                  “Had the pleasure of taking this lovely Electric Scooter out for a good run… With its game-changing swappable battery system, we're talking about freedom, range, and never-ending journeys! Say hello to quicker commutes and stylish manoeuvering!” — Andy Kow on the Blueshark R1 Smart Scooter.
                 </div>
                 <a href={`${sortedDataDesc[0].link}`} target="_blank" rel="noreferrer">
                   <button className="text-button text-white hover:text-black cta bg-transparent hover:bg-white border-2 border-white font-bold transition ease-in duration-200">
-                    Read More
+                    Watch Video
                   </button>
                 </a>
               </div>

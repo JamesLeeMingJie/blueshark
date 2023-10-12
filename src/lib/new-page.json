@@ -1118,7 +1118,31 @@
     "month": "august",
     "img": "/articleImages/2023/august/reviews__12.png",
     "link": "https://www.youtube.com/watch?v=gsfpSj6vFjo&list=PLc_OQ6o6t2jrPmc9E-rMgrWoU0giGiw54&index=3",
-    "description": "Pilot Programme Review | Blueshark ",
+    "description": "Pilot Programme Review | Blueshark",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__23",
+    "date": "20-09-2023",
+    "month": "september",
+    "img": "/articleImages/2023/september/reviews__3.png",
+    "link": "https://www.youtube.com/watch?v=sp3rBhoDV7g&list=PLc_OQ6o6t2jrPmc9E-rMgrWoU0giGiw54&index=5&ab_channel=BluesharkMalaysia",
+    "description": "Blueshark R1 Smart Scooter: Full Review & Test Ride by @eree84",
+    "subcategories": [
+      "reviews"
+    ],
+    "source": "external"
+  },
+  {
+    "id": "reviews__24",
+    "date": "03-10-2023",
+    "month": "october",
+    "img": "/articleImages/2023/october/reviews__1.png",
+    "link": "https://www.youtube.com/watch?v=BR23uNswd6Y&list=PLc_OQ6o6t2jrPmc9E-rMgrWoU0giGiw54&index=6&ab_channel=BluesharkMalaysia",
+    "description": "Blueshark R1 Smart Electric Scooter: FULL REVIEW by @AndyKow",
     "subcategories": [
       "reviews"
     ],
