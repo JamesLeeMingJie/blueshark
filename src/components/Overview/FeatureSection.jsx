@@ -77,10 +77,10 @@ export default function FeatureSection() {
             <div className="flex sm:flex-col-reverse lg:flex-row sm:gap-y-8">
               <div className="flex flex-2 flex-col gap-y-8 justify-center relative" data-aos="fade-up">
                 <div className="text-h2 leading-tight font-bold text-primary" >
-                  Built-in GPS and music playback
+                  Built-in speakers for music playback
                 </div>
                 <div className="text-body2 pb-4">
-                  Smart GPS and Bluetooth connectivity help you navigate and ride to the beat of any music playback app you desire.
+                  Bluetooth connectivity allows you to ride to the beat of any music playback.
                 </div>
                 <div className="absolute text-gray-600 font-thin top-0 text-number sm:translate-x-[-15%] md:translate-x-[-25%] translate-y-[-25%] opacity-10">02</div>
               </div>

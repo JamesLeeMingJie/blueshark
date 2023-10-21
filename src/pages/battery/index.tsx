@@ -4,6 +4,14 @@ import Image from 'next/image';
 import Collapsible from '../../components/Common/Collapsible/index';
 import styles from '../../styles/Background.module.css';
 
+// Images
+import petrolMotorcycle from '../../../public/images/battery/petrol-motorcycle.png';
+import evMotorcycle from '../../../public/images/battery/blueshark-ev-motorcycle.png';
+import smallBatteryIcon from '../../../public/images/battery/battery-icon.png';
+import smallPetrolIcon from '../../../public/images/battery/petrol-icon.png';
+import smallChargingIcon from '../../../public/images/battery/charging-icon.png';
+import exclamationIcon from '../../../public/icons-new/exclamation-icon.svg';
+
 // import mainBg from '../../../public/background/battery-bg.jpg';
 // import mainBgMobile from '../../../public/background/battery-bg-mobile.jpg';
 // import blueSharkBg from '../../../public/background/blueshark-bg.png';
@@ -24,6 +32,9 @@ import dualIcon from '../../../public/revampImages/dual-icon.png';
 import cycleIcon from '../../../public/revampImages/cycle-icon.png';
 
 // import { BsFillArrowUpCircleFill } from 'react-icons/bs';
+
+import { GrCircleInformation } from 'react-icons/gr';
+
 import BackToTop from '../../components/Common/BackToTop';
 
 export default function BatteryPage() {
@@ -34,6 +45,26 @@ export default function BatteryPage() {
   };
 
   console.log(toggle);
+
+  // Mobile popovers
+  const [popover1, setPopover1] = useState(false);
+  const [popover2, setPopover2] = useState(false);
+  const [popover3, setPopover3] = useState(false);
+  const [popover4, setPopover4] = useState(false);
+  const [popover5, setPopover5] = useState(false);
+  const [popover6, setPopover6] = useState(false);
+  const [popover7, setPopover7] = useState(false);
+  const [popover8, setPopover8] = useState(false);
+
+  // Desktop popovers
+  const [popoverDesktop1, setPopoverDesktop1] = useState(false);
+  const [popoverDesktop2, setPopoverDesktop2] = useState(false);
+  const [popoverDesktop3, setPopoverDesktop3] = useState(false);
+  const [popoverDesktop4, setPopoverDesktop4] = useState(false);
+  const [popoverDesktop5, setPopoverDesktop5] = useState(false);
+  const [popoverDesktop6, setPopoverDesktop6] = useState(false);
+  const [popoverDesktop7, setPopoverDesktop7] = useState(false);
+  const [popoverDesktop8, setPopoverDesktop8] = useState(false);
 
   return (
     <div>
@@ -55,8 +86,520 @@ export default function BatteryPage() {
         </div>
       </section>
 
-      <section className="bg-white overflow-auto lg:h-[85vh] sm:pb-20 3xl:pb-0">
-        <div className="sm:w-full lg:w-6/12 float-left h-full flex items-center sm:pb-20 lg:pb-0">
+      <section className="sm:block lg:hidden">
+        <p className="text-h2 text-primary w-10/12 mx-auto py-16 leading-tight">Travel Cost Comparison</p>
+        <div className="w-10/12 mx-auto grid grid-cols-3 grid-rows-[80px_60px_1fr_80px_80px_80px_80px_80px_80px] rounded-[5px] mb-20 border-b-[1px] overflow-visible">
+          {/* First row */}
+          <div className="bg-secondary text-travel-title-white flex items-center text-center p-4">
+            Petrol Motorcycle
+          </div>
+          <div className="bg-secondary text-travel-title-white flex items-center text-center p-4">
+            EV (Home Charging)
+          </div>
+          <div className="bg-secondary text-travel-title-white flex items-center text-center p-4">
+            EV (BlueSwap Plan)
+          </div>
+
+          {/* Second row */}
+          <div className="col-span-3 text-travel-title-black bg-[#F2F2F2] flex items-center px-6">
+            Calculation Method
+          </div>
+
+          {/* Third row */}
+          <div className="col-span-1 flex items-center justify-center text-travel-title-blue py-12 border-x-[1px]">
+            <div className="px-4 grid gap-y-2">
+              <p>Average Travel Cost</p>
+              <div>
+                = 45km/L petrol
+                <span
+                  className="relative pl-4 mobile-popover-adjustment"
+                  onMouseEnter={() => setPopover7(true)}
+                  onMouseLeave={() => setPopover7(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover7 && (
+                    <p className="absolute top-[165%] right-[-130%] basic-box-shadow rounded-[5px] bg-secondary smalltext-body-white-bold p-4 whitespace-nowrap">
+                      (RON95 @ RM2.05/L)
+                    </p>
+                  )}
+                </span>
+              </div>
+              <p className="whitespace-nowrap">= RM0.046/km</p>
+            </div>
+          </div>
+          <div className="col-span-1 flex items-center justify-center text-travel-title-blue py-12">
+            <div className="px-4 grid gap-y-2">
+              <p>Average Travel Cost</p>
+              <div>
+                = Full Charge 110km
+                <span
+                  className="relative pl-4 mobile-popover-adjustment"
+                  onMouseEnter={() => setPopover8(true)}
+                  onMouseLeave={() => setPopover8(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover8 && (
+                    <p className="absolute top-[165%] left-[-180%] basic-box-shadow rounded-[5px] bg-secondary smalltext-body-white-bold p-4 whitespace-nowrap">
+                      (Average electricity tariff @ RM0.44/kWh)
+                    </p>
+                  )}
+                </span>
+              </div>
+              <p>= RM0.012/km</p>
+            </div>
+          </div>
+          <div className="col-span-1 flex items-center text-center text-travel-title-blue py-12 border-x-[1px]">
+            <div className="px-4">
+              <p>Average Travel Cost depending on BlueSwap subscription plan</p>
+            </div>
+          </div>
+
+          {/* Fourth row */}
+          <div className="col-span-3 text-travel-title-black bg-[#F2F2F2] flex items-center px-6">
+            <div>
+              <p>Commute 60km/day</p>
+              <p>(Annual travel distance: 21,900km)</p>
+            </div>
+          </div>
+
+          {/* Fifth row */}
+          <div className="text-center flex items-center justify-center text-travel-title-blue border-x-[1px]">
+            RM1,007.40
+          </div>
+          <div className="text-center flex items-center justify-center text-travel-title-blue">
+            <div>
+              <p className="flex items-center justify-center gap-x-2">
+                RM262.80
+                <span
+                  className="relative flex"
+                  onMouseEnter={() => setPopover1(true)}
+                  onMouseLeave={() => setPopover1(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover1 && (
+                    <p className="absolute top-[150%] right-[-80%] basic-box-shadow rounded-[5px] bg-secondary text-travel-title-white p-4">
+                      Saves RM744.60&nbsp;<span className="smalltext-body-white-bold ">/year</span>
+                    </p>
+                  )}
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="text-center flex items-center justify-center text-travel-title-blue border-x-[1px]">
+            <div>
+              <p className="flex items-center justify-center gap-x-2">
+                RM708
+                <span
+                  className="relative flex"
+                  onMouseEnter={() => setPopover2(true)}
+                  onMouseLeave={() => setPopover2(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover2 && (
+                    <p className="absolute top-[200%] right-[-70%] basic-box-shadow rounded-[5px] bg-secondary text-travel-title-white p-4">
+                      Saves RM299.40 <span className="smalltext-body-white-bold ">/year</span>
+                    </p>
+                  )}
+                </span>
+              </p>
+            </div>
+          </div>
+
+          {/* Sixth row */}
+          <div className="col-span-3 text-travel-title-black bg-[#F2F2F2] flex items-center px-6">
+            <div>
+              <p>Lifestyle 120km/day</p>
+              <p>(Annual travel distance: 43,800km)</p>
+            </div>
+          </div>
+
+          {/* Seventh row */}
+          <div className="text-center flex items-center justify-center text-travel-title-blue border-x-[1px]">
+            RM2,014.80
+          </div>
+          <div className="text-center flex items-center justify-center text-travel-title-blue">
+            <div>
+              <p className="flex items-center justify-center gap-x-2">
+                RM525.60
+                <span
+                  className="flex relative"
+                  onMouseEnter={() => setPopover3(true)}
+                  onMouseLeave={() => setPopover3(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover3 && (
+                    <p className="absolute top-[200%] right-[-50%] basic-box-shadow rounded-[5px] bg-secondary text-travel-title-white p-4">
+                      Saves RM1,489.20 <span className="smalltext-body-white-bold ">/year</span>
+                    </p>
+                  )}
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="text-center flex items-center justify-center text-travel-title-blue border-x-[1px]">
+            <div>
+              <p className="flex items-center justify-center gap-x-2">
+                RM1,188
+                <span
+                  className="flex relative"
+                  onMouseEnter={() => setPopover4(true)}
+                  onMouseLeave={() => setPopover4(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover4 && (
+                    <p className="absolute top-[200%] right-[-60%] basic-box-shadow rounded-[5px] bg-secondary text-travel-title-white p-4">
+                      Saves RM826.80 <span className="smalltext-body-white-bold ">/year</span>
+                    </p>
+                  )}
+                </span>
+              </p>
+            </div>
+          </div>
+
+          {/* Eighth row */}
+          <div className="col-span-3 text-travel-title-black bg-[#F2F2F2] flex items-center px-6">
+            <div>
+              <p>Delivery 200km/day</p>
+              <p>(Annual travel distance: 73,800km)</p>
+            </div>
+          </div>
+
+          {/* Ninth row */}
+          <div className="text-center flex items-center justify-center text-travel-title-blue border-x-[1px]">
+            RM3,358.00
+          </div>
+          <div className="text-center flex items-center justify-center text-travel-title-blue">
+            <div>
+              <p className="flex items-center justify-center gap-x-2">
+                RM885.60
+                <span
+                  className="flex relative"
+                  onMouseEnter={() => setPopover5(true)}
+                  onMouseLeave={() => setPopover5(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover5 && (
+                    <p className="absolute top-[200%] right-[-50%] basic-box-shadow rounded-[5px] bg-secondary text-travel-title-white p-4">
+                      Saves RM2,472.40 <span className="smalltext-body-white-bold">/year</span>
+                    </p>
+                  )}
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="text-center flex items-center justify-center text-travel-title-blue border-x-[1px]">
+            <div>
+              <p className="flex items-center justify-center gap-x-2">
+                RM1,668
+                <span
+                  className="flex relative"
+                  onMouseEnter={() => setPopover6(true)}
+                  onMouseLeave={() => setPopover6(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover6 && (
+                    <p className="absolute top-[200%] right-[-10%] basic-box-shadow rounded-[5px] bg-secondary text-travel-title-white p-4">
+                      Saves RM1,690 <span className="smalltext-body-white-bold ">/year</span>
+                    </p>
+                  )}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="sm:hidden lg:block">
+        <p className="text-h2 text-primary w-10/12 mx-auto py-20">Travel Cost Comparison</p>
+        <div className="w-10/12 mx-auto grid grid-cols-8 grid-rows-[1fr_180px_80px_80px_80px] gap-4 pb-40 text-base">
+          {/* First row */}
+          <div className="col-start-3 col-end-5 col-span-2 basic-box-shadow rounded-[5px] py-12 grid grid-rows-[80px_1fr]">
+            <div className="flex gap-x-4 items-center justify-center pb-8 px-8">
+              <div>
+                <Image src={smallPetrolIcon} width={50} height={55} alt="" />
+              </div>
+              <div>
+                <p className="text-body-blue-bolder pb-2">Petrol Motorcycle</p>
+                <p className="text-travel-title-blue">150cc & Below</p>
+                <p className="text-travel-title-blue">Estimated 45km/L petrol</p>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <Image src={petrolMotorcycle} width={140} height={110} alt="" />
+            </div>
+          </div>
+          <div className="col-start-5 col-end-9 col-span-4 basic-box-shadow rounded-[5px] py-12 grid grid-rows-[80px_1fr]">
+            <div className="flex gap-x-4 items-center justify-center pb-8">
+              <div>
+                <Image src={smallChargingIcon} width={30} height={55} alt="" />
+              </div>
+              <div>
+                <p className="text-body-blue-bolder pb-2">Blueshark EV Motorcycle</p>
+                <p className="text-travel-title-blue">Dual-battery of</p>
+                <p className="text-travel-title-blue">48V x 30Ah = 2.88kWh</p>
+              </div>
+            </div>
+            <div className="flex justify-center gap-x-8">
+              <div>
+                <Image src={evMotorcycle} width={150} height={110} alt="" />
+              </div>
+              <div className="pt-4">
+                <Image src={smallBatteryIcon} width={100} height={100} alt="" />
+              </div>
+            </div>
+          </div>
+
+          {/* Second row */}
+          <div className="bg-secondary text-travel-title-white px-4 py-12 text-center rounded-[5px] flex items-center justify-center basic-box-shadow">
+            Purpose of usage
+          </div>
+          <div className="bg-secondary text-travel-title-white px-4 py-12 text-center rounded-[5px] flex items-center justify-center basic-box-shadow">
+            Annual Travel Distance
+          </div>
+          <div className="col-span-2 flex items-center justify-center text-travel-title-blue py-12 rounded-[5px] basic-box-shadow">
+            <div className="w-10/12 mx-auto grid gap-y-2">
+              <p>Average Travel Cost</p>
+              <div className="flex items-center">
+                = 45km/L petrol
+                <p
+                  className="relative flex pl-4"
+                  onMouseEnter={() => setPopoverDesktop7(true)}
+                  onMouseLeave={() => setPopoverDesktop7(false)}
+                >
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popoverDesktop7 && (
+                    <p className="absolute top-0 right-0 translate-x-[110%] basic-box-shadow rounded-[5px] bg-secondary smalltext-body-white-bold whitespace-nowrap px-6 py-4">
+                      (RON95 @ RM2.05/L)
+                    </p>
+                  )}
+                </p>
+              </div>
+              <p>= RM0.046/km</p>
+            </div>
+          </div>
+          <div className="col-span-2 grid grid-cols-1 grid-rows-[30px_1fr] gap-y-4">
+            <div className="bg-secondary text-travel-title-white px-4 py-4 justify-center rounded-[5px] flex items-center basic-box-shadow">
+              Home Charging
+            </div>
+            <div className="col-span-2 flex items-center justify-center text-travel-title-blue py-12 rounded-[5px] basic-box-shadow">
+              <div className="w-10/12 mx-auto grid gap-y-2">
+                <p>Average Travel Cost</p>
+                <div className="flex items-center">
+                  = Full Charge 110km
+                  <p
+                    className="relative flex pl-4"
+                    onMouseEnter={() => setPopoverDesktop8(true)}
+                    onMouseLeave={() => setPopoverDesktop8(false)}
+                  >
+                    <Image src={exclamationIcon} alt="" />
+
+                    {popoverDesktop8 && (
+                      <p className="absolute top-0 right-0 translate-x-[105%] basic-box-shadow rounded-[5px] bg-secondary smalltext-body-white-bold whitespace-nowrap px-6 py-4">
+                        (Average electricity tariff @ RM0.44/kWh)
+                      </p>
+                    )}
+                  </p>
+                </div>
+                <p>= RM0.012/km</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 grid grid-cols-1 grid-rows-[30px_1fr] gap-y-4">
+            <div className="bg-secondary text-travel-title-white px-4 py-4 justify-center rounded-[5px] flex items-center basic-box-shadow">
+              BlueSwap Plan
+            </div>
+            <div className="col-span-2 flex items-center text-center text-travel-title-blue py-12 rounded-[5px] basic-box-shadow">
+              <div className="w-8/12 mx-auto">
+                <p className="leading-tight">Average Travel Cost depending on BlueSwap subscription plan</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Third row */}
+          <div className="text-center flex items-center justify-center rounded-[5px] basic-box-shadow">
+            <div>
+              <p className="pb-2 text-body-blue-bolder">Commute</p>
+              <span className="text-body-grey-bold">
+                60
+                <span className="smalltext-body-grey-bold inline-block -translate-y-2">km</span>
+                <span className="smalltext-body-grey-bold inline-block translate-y-1">/day</span>
+              </span>
+            </div>
+          </div>
+          <div className="text-center flex items-center justify-center text-body-blue-bold rounded-[5px] basic-box-shadow">
+            <div>
+              21,900
+              <span className="smalltext-body-blue-bold inline-block translate-y-2">km</span>
+            </div>
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow text-body-blue-bold">
+            RM1,007.40
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow bg-secondary text-body-white-bold">
+            <div className="flex items-center">
+              <p className="leading-normal pr-4">RM262.80</p>
+              <p
+                className="relative flex"
+                onMouseEnter={() => setPopoverDesktop1(true)}
+                onMouseLeave={() => setPopoverDesktop1(false)}
+              >
+                <Image src={exclamationIcon} alt="" />
+
+                {popoverDesktop1 && (
+                  <p className="absolute top-0 right-0 translate-x-[110%] basic-box-shadow rounded-[5px] bg-white text-travel-title-blue px-8 py-4 leading-tight">
+                    Saves RM744.60&nbsp;<span className="smalltext-body-blue-bold">/year</span>
+                  </p>
+                )}
+              </p>
+            </div>
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow bg-secondary text-body-white-bold">
+            <div className="flex items-center">
+              <p className="leading-normal pr-4">RM708</p>
+              <p
+                className="relative flex"
+                onMouseEnter={() => setPopoverDesktop2(true)}
+                onMouseLeave={() => setPopoverDesktop2(false)}
+              >
+                <Image src={exclamationIcon} alt="" />
+
+                {popoverDesktop2 && (
+                  <p className="absolute top-0 right-0 translate-x-[110%] basic-box-shadow rounded-[5px] bg-white text-travel-title-blue px-8 py-4 leading-tight">
+                    Saves RM299.40&nbsp;<span className="smalltext-body-blue-bold ">/year</span>
+                  </p>
+                )}
+              </p>
+            </div>
+          </div>
+
+          {/* Fourth row */}
+          <div className="text-center flex items-center justify-center rounded-[5px] basic-box-shadow">
+            <div>
+              <p className="pb-2 text-body-blue-bolder">Lifestyle</p>
+              <span className="text-body-grey-bold">
+                120
+                <span className="smalltext-body-grey-bold inline-block -translate-y-2">km</span>
+                <span className="smalltext-body-grey-bold inline-block translate-y-1">/day</span>
+              </span>
+            </div>
+          </div>
+          <div className="text-center flex items-center justify-center text-body-blue-bold rounded-[5px] basic-box-shadow">
+            <div>
+              43,800
+              <span className="smalltext-body-blue-bold inline-block translate-y-2">km</span>
+            </div>
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow text-body-blue-bold">
+            RM2,014.80
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow bg-secondary text-body-white-bold">
+            <div className="flex items-center">
+              <p className="leading-normal pr-4">RM525.60</p>
+              <p
+                className="relative flex"
+                onMouseEnter={() => setPopoverDesktop3(true)}
+                onMouseLeave={() => setPopoverDesktop3(false)}
+              >
+                <Image src={exclamationIcon} alt="" />
+
+                {popoverDesktop3 && (
+                  <p className="absolute top-0 right-0 translate-x-[110%] basic-box-shadow rounded-[5px] bg-white text-travel-title-blue px-8 py-4 leading-tight">
+                    Saves RM1,489.20&nbsp;<span className="smalltext-body-blue-bold ">/year</span>
+                  </p>
+                )}
+              </p>
+            </div>
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow bg-secondary text-body-white-bold">
+            <div className="flex items-center">
+              <p className="leading-normal pr-4">RM1,188</p>
+              <p
+                className="relative flex"
+                onMouseEnter={() => setPopoverDesktop4(true)}
+                onMouseLeave={() => setPopoverDesktop4(false)}
+              >
+                <Image src={exclamationIcon} alt="" />
+
+                {popoverDesktop4 && (
+                  <p className="absolute top-0 right-0 translate-x-[110%] basic-box-shadow rounded-[5px] bg-white text-travel-title-blue px-8 py-4 leading-tight">
+                    Saves RM826.80&nbsp;<span className="smalltext-body-blue-bold ">/year</span>
+                  </p>
+                )}
+              </p>
+            </div>
+          </div>
+
+          {/* Fifth row */}
+          <div className="text-center flex items-center justify-center rounded-[5px] basic-box-shadow">
+            <div>
+              <p className="pb-2 text-body-blue-bolder">Delivery</p>
+              <span className="text-body-grey-bold">
+                200
+                <span className="smalltext-body-grey-bold inline-block -translate-y-2">km</span>
+                <span className="smalltext-body-grey-bold inline-block translate-y-1">/day</span>
+              </span>
+            </div>
+          </div>
+          <div className="text-center flex items-center justify-center text-body-blue-bold rounded-[5px] basic-box-shadow">
+            <div>
+              73,800
+              <span className="smalltext-body-blue-bold inline-block translate-y-2">km</span>
+            </div>
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow text-body-blue-bold">
+            RM3,358.00
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow bg-secondary text-body-white-bold">
+            <div className="flex items-center">
+              <p className="leading-normal pr-4">RM885.60</p>
+              <p
+                className="relative flex"
+                onMouseEnter={() => setPopoverDesktop5(true)}
+                onMouseLeave={() => setPopoverDesktop5(false)}
+              >
+                <Image src={exclamationIcon} alt="" />
+
+                {popoverDesktop5 && (
+                  <p className="absolute top-0 right-0 translate-x-[110%] basic-box-shadow rounded-[5px] bg-white text-travel-title-blue px-8 py-4 leading-tight">
+                    Saves RM2,472.40&nbsp;<span className="smalltext-body-blue-bold ">/year</span>
+                  </p>
+                )}
+              </p>
+            </div>
+          </div>
+          <div className="col-span-2 text-center flex items-center justify-center rounded-[5px] basic-box-shadow bg-secondary text-body-white-bold">
+            <div className="flex items-center">
+              <p className="leading-normal pr-4">RM1,668</p>
+              <p
+                className="relative flex"
+                onMouseEnter={() => setPopoverDesktop6(true)}
+                onMouseLeave={() => setPopoverDesktop6(false)}
+              >
+                <Image src={exclamationIcon} alt="" />
+
+                {popoverDesktop6 && (
+                  <p className="absolute top-0 right-0 translate-x-[110%] basic-box-shadow rounded-[5px] bg-white text-travel-title-blue px-8 py-4 leading-tight z-40">
+                    Saves RM1,690&nbsp;<span className="smalltext-body-blue-bold ">/year</span>
+                  </p>
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white lg:h-[70vh] sm:pb-20 3xl:pb-0">
+        {/* Hot fix z-index below */}
+        <div className="sm:w-full lg:w-6/12 float-left h-full flex items-center sm:pb-20 lg:pb-0 relative z-20">
           <Image src={batteryKV} alt="" />
         </div>
         <div className="sm:w-10/12 mx-auto lg:w-4/12 lg:float-left md:flex flex-col justify-center gap-y-4 h-full lg:pl-40">

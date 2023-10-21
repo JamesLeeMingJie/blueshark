@@ -66,16 +66,19 @@ const Home: NextPage = () => {
                 onMouseEnter={() => setPopover(true)}
                 onMouseLeave={() => setPopover(false)}
               >
-                <Image src={exclamationIcon} alt="" />
+                <span className="relative">
+                  <Image src={exclamationIcon} alt="" />
+
+                  {popover && (
+                    <div className="absolute md:top-[-5px] right-0 sm:translate-y-[10%] md:translate-y-0 md:translate-x-[110%] w-[200px]">
+                      <div className="text-[14px] font-normal text-white bg-[#30629F] py-4 px-8 rounded-[15px]">
+                        Monthly instalments <br /> starting from RM120
+                      </div>
+                    </div>
+                  )}
+                </span>
               </span>
             </span>
-            {popover && (
-              <div className="absolute md:top-0 right-0 sm:translate-x-[-40%] 3xl:translate-x-[-110%] sm:translate-y-[25%] md:translate-y-[80%] xl:translate-y-[40%] 3xl:translate-y-[30%]">
-                <div className="text-[14px] font-normal text-white bg-[#30629F] py-4 px-8 rounded-[15px]">
-                  Monthly instalments <br /> starting from RM120
-                </div>
-              </div>
-            )}
           </div>
           <div className="sm:w-10/12 md:w-6/12 text-center home-tertiary-title pb-12 md:pb-8">
             Exclusive offer for all CIMB credit cardholders to purchase the Blueshark R Series Smart Electric Scooter

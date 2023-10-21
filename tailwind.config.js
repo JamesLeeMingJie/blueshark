@@ -69,6 +69,7 @@ module.exports = {
         gray_1: '#949494',
         gray_2: '#D0D0D0',
         primary: '#30629F',
+        secondary: '#2C8AC3',
       },
       // fontFamily: {
       //   sans: ['Roboto', 'sans-serif'],

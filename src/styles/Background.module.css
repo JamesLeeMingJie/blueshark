@@ -9,6 +9,24 @@
   background-size: cover;
 }
 
+/* strictly mobile */
+@media (max-width: 480px) {
+  .pricingBackground {
+    background: url('../../public/background/pricing-bg-mobile.png');
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* outlier */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .pricingBackground {
+    background: url('../../public/background/pricing-bg-tablet.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 /* mobile */
 @media (max-width: 767px) {
   .aboutBackground {
@@ -19,12 +37,6 @@
 
   .batteryBackground {
     background: url('../../public/background/battery-bg-mobile.jpg');
-    background-position: center;
-    background-size: cover;
-  }
-
-  .pricingBackground {
-    background: url('../../public/background/pricing-bg-mobile.png');
     background-position: center;
     background-size: cover;
   }

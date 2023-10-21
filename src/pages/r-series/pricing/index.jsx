@@ -40,7 +40,7 @@ import Link from "next/link";
 
 function BuyPricing() {
   return (
-    <div className="grid grid-cols-2 md:w-[330px]">
+    <div className="grid grid-cols-2 sm:w-[310px] md:w-[350px]">
       <div className="border-r-2 border-[#808080]">
         <div className="text-black text-body1">
           R1
@@ -63,7 +63,7 @@ function BuyPricing() {
 
 function RentPricing() {
   return (
-    <div className="grid grid-cols-2 md:w-[330px]">
+    <div className="grid grid-cols-2 sm:w-[310px] md:w-[350px]">
       <div className="border-r-2 border-[#808080]">
         <div className="text-black text-body1">
           R1
@@ -96,14 +96,20 @@ function BatteryPricing({ buyOrRent }) {
 
       {buyOrRent === "buy" &&
         (<ul className="list-none text-body3">
-          <li className="flex items-center pb-4">
-            <AiFillCloseCircle className="text-[#ff4f4e] text-[28px] my-auto mr-4" /> Not entitled for BlueSwap service
+          <li className="flex items-center pb-4 gap-x-4">
+            <AiFillCloseCircle className="text-[#ff4f4e] text-[28px] my-auto" /> Not entitled for BlueSwap service
           </li>
-          <li className="flex items-center pb-4">
-            <AiFillCheckCircle className="text-[#3ada80] text-[28px] my-auto mr-4" /> Free portable battery charging kit
+          <li className="flex items-center pb-4 gap-x-4">
+            <AiFillCheckCircle className="text-[#3ada80] text-[28px] my-auto" /> Free portable battery charging kit
           </li>
-          <li className="flex items-center">
-            <AiFillCheckCircle className="text-[#3ada80] text-[28px] my-auto mr-4" /> Includes dual-batteries with warranty (T&C apply)
+          <li className="flex items-center pb-4 gap-x-4">
+            <AiFillCheckCircle className="text-[#3ada80] text-[28px] my-auto" /> Includes dual-batteries with warranty (T&C apply)
+          </li>
+          <li className="grid grid-cols-[15px_1fr]">
+            <span>*</span>
+            <span className="italic">
+              Selling price excluding insurance, JPJ inspection fee, number plate and stamp duty.
+            </span>
           </li>
         </ul>)}
 
@@ -129,7 +135,7 @@ function BatteryPricing({ buyOrRent }) {
           <li className="flex items-center pb-4 gap-x-4">
             <AiFillCheckCircle className="text-[#3ada80] text-[28px] my-auto" /> Option for BlueSwap subscription
           </li>
-          <li className="flex items-center gap-x-4">
+          <li className="flex items-center justify-center pb-4 gap-x-4">
             <AiFillCheckCircle className="text-[#3ada80] text-[28px] my-auto" /> Free portable battery charging kit
             <span className="relative">
               <Image onMouseEnter={() => setPopover2(true)} onMouseLeave={() => setPopover2(false)} src={exclamationIcon} alt="" />
@@ -144,6 +150,12 @@ function BatteryPricing({ buyOrRent }) {
               )}
             </span>
 
+          </li>
+          <li className="grid grid-cols-[15px_1fr]">
+            <span>*</span>
+            <span className="italic">
+              Selling price excluding insurance, JPJ inspection fee, number plate and stamp duty.
+            </span>
           </li>
         </ul>)}
 
@@ -166,7 +178,7 @@ export default function PricingPage() {
           <div className="sm:w-10/12 lg:w-8/12 mx-auto text-left items-center sm:pt-[40%] md:pt-[17%] lg:pt-0 lg:flex lg:h-full">
             <div className="w-full lg:w-5/12">
               <div className="text-primary text-title font-bold">
-                Own the R1
+                Own the R1 series
               </div>
               <div className="text-black text-body2 pb-8">
                 Choose to rent or buy with batteries*
