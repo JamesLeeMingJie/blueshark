@@ -46,6 +46,12 @@
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 390px) {
+  .small-mobile-banner {
+    height: fit-content;
+  }
+}
+
 /***** Pricing *****/
 @media screen and (min-width: 480px) {
   .mobileOnly {
