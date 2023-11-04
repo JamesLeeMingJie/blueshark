@@ -343,7 +343,7 @@ export default function BatteryPage() {
               </div>
               <div>
                 <p className="text-body-blue-bolder pb-2">Blueshark EV Motorcycle</p>
-                <p className="text-travel-title-blue">Dual-battery of</p>
+                <p className="text-travel-title-blue">Dual-battery output of</p>
                 <p className="text-travel-title-blue">48V x 30Ah = 2.88kWh</p>
               </div>
             </div>
@@ -359,7 +359,7 @@ export default function BatteryPage() {
 
           {/* Second row */}
           <div className="bg-secondary text-travel-title-white px-4 py-12 text-center rounded-[5px] flex items-center justify-center basic-box-shadow">
-            Purpose of usage
+            Use Cases
           </div>
           <div className="bg-secondary text-travel-title-white px-4 py-12 text-center rounded-[5px] flex items-center justify-center basic-box-shadow">
             Annual Travel Distance

@@ -53,80 +53,80 @@ const Home: NextPage = () => {
         Sorry, your browser doesn't suppport videos
       </video> */}
       <section>
-        <Swiper
+        {/* <Swiper
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           navigation={true}
           modules={[Autoplay, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <div
-              className={`sm:pt-32 sm:pb-16 md:pb-0 md:pt-20 3xl:py-0 small-mobile-banner h-screen flex flex-col items-center justify-center ${styles.homeBackground}`}
-            >
-              <div className="sm:w-10/12 md:w-8/12 justify-center items-center text-center mx-auto home-title md:flex gap-x-8 pb-8 md:pb-4 md:mt-4 3xl:mt-0">
-                Yours with
-                <span className="sm:w-9/12 md:w-3/12 h-6/12 sm:mx-auto md:mx-0 flex">
-                  <Image src={cimbLogo} alt="" />
-                </span>
-                0% Easy Pay Plan
-              </div>
-              <div className="sm:w-10/12 md:w-8/12 text-center home-sub-title text-primary relative pb-8 md:pb-4">
-                From As Low as RM4
-                <span className="text-body1">
-                  /day
-                  <span
-                    className="inline-icons"
-                    onMouseEnter={() => setPopover(true)}
-                    onMouseLeave={() => setPopover(false)}
-                  >
-                    <span className="relative">
-                      <Image src={exclamationIcon} alt="" />
+          <SwiperSlide> */}
+        <div
+          className={`sm:pt-32 sm:pb-16 md:pb-0 md:pt-20 3xl:py-0 small-mobile-banner h-screen flex flex-col items-center justify-center ${styles.homeBackground}`}
+        >
+          <div className="sm:w-10/12 md:w-8/12 justify-center items-center text-center mx-auto home-title md:flex gap-x-8 pb-8 md:pb-4 md:mt-4 3xl:mt-0">
+            Yours with
+            <span className="sm:w-9/12 md:w-3/12 h-6/12 sm:mx-auto md:mx-0 flex">
+              <Image src={cimbLogo} alt="" />
+            </span>
+            0% Easy Pay Plan
+          </div>
+          <div className="sm:w-10/12 md:w-8/12 text-center home-sub-title text-primary relative pb-8 md:pb-4">
+            From As Low as RM4
+            <span className="text-body1">
+              /day
+              <span
+                className="inline-icons"
+                onMouseEnter={() => setPopover(true)}
+                onMouseLeave={() => setPopover(false)}
+              >
+                <span className="relative">
+                  <Image src={exclamationIcon} alt="" />
 
-                      {popover && (
-                        <div className="absolute md:top-[-5px] right-0 sm:translate-y-[10%] md:translate-y-0 md:translate-x-[110%] w-[200px]">
-                          <div className="text-[14px] font-normal text-white bg-[#30629F] py-4 px-8 rounded-[15px]">
-                            Monthly instalments <br /> starting from RM120
-                          </div>
-                        </div>
-                      )}
-                    </span>
-                  </span>
+                  {popover && (
+                    <div className="absolute md:top-[-5px] right-0 sm:translate-y-[10%] md:translate-y-0 md:translate-x-[110%] w-[200px]">
+                      <div className="text-[14px] font-normal text-white bg-[#30629F] py-4 px-8 rounded-[15px]">
+                        Monthly instalments <br /> starting from RM120
+                      </div>
+                    </div>
+                  )}
                 </span>
-              </div>
-              <div className="sm:w-9/12 md:w-6/12 text-center home-tertiary-title pb-12 md:pb-8">
-                Exclusive offer for all CIMB credit cardholders to purchase the Blueshark R Series Smart Electric
-                Scooter with 0% interest for up to 60-months instalment plan.
-              </div>
-              <div className="sm:w-10/12 md:w-7/12 3xl:w-8/12 flex justify-center pb-12 relative">
-                <Image src={multipleBikes} alt="" />
-                <div className="absolute right-0 bottom-0 3xl:translate-x-[-10%] sm:hidden xl:block">
-                  <div className="px-16 py-4 rounded-[15px] bg-white home-promotion-text text-center shadow-lg">
-                    <span className="font-bold">
-                      FREE 1 month <br /> dual-battery rental <br />
-                    </span>
-                    (T&C apply.)
-                  </div>
-                </div>
-              </div>
-              <div className="px-16 py-4 rounded-[15px] bg-white home-promotion-text text-center shadow-lg sm:block xl:hidden mb-12">
+              </span>
+            </span>
+          </div>
+          <div className="sm:w-9/12 md:w-6/12 text-center home-tertiary-title pb-12 md:pb-8">
+            Exclusive offer for all CIMB credit cardholders to purchase the Blueshark R Series Smart Electric Scooter
+            with 0% interest for up to 60-months instalment plan.
+          </div>
+          <div className="sm:w-10/12 md:w-7/12 3xl:w-8/12 flex justify-center pb-12 relative">
+            <Image src={multipleBikes} alt="" />
+            <div className="absolute right-0 bottom-0 3xl:translate-x-[-10%] sm:hidden xl:block">
+              <div className="px-16 py-4 rounded-[15px] bg-white home-promotion-text text-center shadow-lg">
                 <span className="font-bold">
                   FREE 1 month <br /> dual-battery rental <br />
                 </span>
                 (T&C apply.)
               </div>
-              <div data-aos="fade-up">
-                <Link href="/r-series/form">
-                  <button className="text-button text-primary hover:text-white bg-transparent hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold">
-                    I'm interested
-                  </button>
-                </Link>
-              </div>
             </div>
-          </SwiperSlide>
+          </div>
+          <div className="px-16 py-4 rounded-[15px] bg-white home-promotion-text text-center shadow-lg sm:block xl:hidden mb-12">
+            <span className="font-bold">
+              FREE 1 month <br /> dual-battery rental <br />
+            </span>
+            (T&C apply.)
+          </div>
+          <div data-aos="fade-up">
+            <Link href="/r-series/form">
+              <button className="text-button text-primary hover:text-white bg-transparent hover:bg-primary border-2 border-primary transition ease-in duration-200 cta font-bold">
+                I'm interested
+              </button>
+            </Link>
+          </div>
+        </div>
+        {/* </SwiperSlide>
           <SwiperSlide>
             <div className="text-title h-screen flex items-center justify-center">Hello world!</div>
           </SwiperSlide>
-        </Swiper>
+        </Swiper> */}
       </section>
 
       <div className="relative sm:mt-[-7rem] md:mt-0">

@@ -14,6 +14,7 @@ import pinkBikeBg from '../../../../public/bikes/pink-bikeBg.png';
 import brownBikeBg from '../../../../public/bikes/brown-bikeBg.png';
 import beigeBikeBg from '../../../../public/bikes/beige-bikeBg.png';
 import greenBikeBg from '../../../../public/bikes/green-bikeBg.png';
+import greyBikeBg from '../../../../public/bikes/grey-bikeBg.png';
 
 import DownloadPDF from '../../../components/Common/DownloadPDF';
 
@@ -93,6 +94,9 @@ export default function SpecificationsPage() {
               <div className={`bikeImage ${openTab === 'green' ? 'block shadowImage' : 'hidden'}`}>
                 <Image height={700} src={greenBikeBg} alt="" />
               </div>
+              <div className={`bikeImage ${openTab === 'grey' ? 'block shadowImage' : 'hidden'}`}>
+                <Image height={700} src={greyBikeBg} alt="" />
+              </div>
               <div className="text-primary text-h3 font-bold">R1</div>
             </div>
 
@@ -107,6 +111,7 @@ export default function SpecificationsPage() {
                 {openTab === 'green' && <div>Pine Green</div>}
                 {openTab === 'black' && <div>Darksea Black</div>}
                 {openTab === 'white' && <div>Spindrift White</div>}
+                {openTab === 'grey' && <div>Inkstone Grey</div>}
               </div>
               <div className="flex flex-wrap gap-x-8 sm:gap-y-4">
                 <a
@@ -142,7 +147,6 @@ export default function SpecificationsPage() {
                     className="sm:h-[30px] sm:w-[30px] md:h-[50px] md:w-[50px] bg-white focus:ring-2 focus:ring-blue-600 border-white focus:border-white focus:border-2 rounded-full shadow-lg cursor-pointer relative overflow-hidden"
                   ></input>
                 </a>
-
                 <a
                   onClick={(e) => {
                     e.preventDefault();
@@ -185,6 +189,17 @@ export default function SpecificationsPage() {
                   <input
                     type="radio"
                     className="sm:h-[30px] sm:w-[30px] md:h-[50px] md:w-[50px] bg-[#004826] focus:ring-2 focus:ring-[#004826] border-[#004826] focus:border-white focus:border-2 rounded-full shadow-lg cursor-pointer relative overflow-hidden"
+                  ></input>
+                </a>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenTab('grey');
+                  }}
+                >
+                  <input
+                    type="radio"
+                    className="sm:h-[30px] sm:w-[30px] md:h-[50px] md:w-[50px] bg-[#8A878B] focus:ring-2 focus:ring-[#8A878B] border-[#8A878B] focus:border-white focus:border-2 rounded-full shadow-lg cursor-pointer relative overflow-hidden"
                   ></input>
                 </a>
               </div>

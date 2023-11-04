@@ -1295,8 +1295,9 @@ const Home: NextPage = () => {
                   {colour === 'green' && <div>Pine Green</div>}
                   {colour === 'black' && <div>Darksea Black</div>}
                   {colour === 'white' && <div>Spindrift White</div>}
+                  {colour === 'grey' && <div>Inkstone Grey</div>}
                 </div>
-                <div className="flex gap-x-8 sm:gap-y-8 sm:flex-wrap md:flex-nowrap pb-16">
+                <div className="flex gap-x-8 sm:gap-y-8 flex-wrap pb-16">
                   <button
                     value="blue"
                     onClick={preferredColour}
@@ -1331,6 +1332,11 @@ const Home: NextPage = () => {
                     value="green"
                     onClick={preferredColour}
                     className="h-[40px] w-[40px] checked:bg-none bg-[#004826] text-[#004826] focus:ring-2 focus:ring-[#004826] border-[#004826] focus:border-white focus:border-2 rounded-full shadow-lg cursor-pointer relative overflow-hidden"
+                  ></button>
+                  <button
+                    value="grey"
+                    onClick={preferredColour}
+                    className="h-[40px] w-[40px] checked:bg-none bg-[#8A878B] text-[#8A878B] focus:ring-2 focus:ring-[#8A878B] border-[#8A878B] focus:border-white focus:border-2 rounded-full shadow-lg cursor-pointer relative overflow-hidden"
                   ></button>
                 </div>
               </div>
