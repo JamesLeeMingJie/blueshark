@@ -50,7 +50,7 @@ export const Header = ({
             ? 'bg-transparent overviewParentNav'
             : ''
           // ${router.pathname === '/' ? 'bg-transparent parentNav' : ''} Add to to make hover navbar effect
-        } sm:px-[20px] md:px-0 h-[60px] absolute w-full ${height >= headerHeight && 'fixed top-0'} z-30`}
+        } sm:px-[20px] md:px-0 h-[60px] absolute w-full ${height >= headerHeight && 'fixed top-0'} z-40`}
         id="header-nav"
       >
         <div className="flex sm:w-full md:w-10/12 lg:w-8/12 mx-auto items-center justify-between h-full">

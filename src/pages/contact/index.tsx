@@ -209,7 +209,7 @@ const ContactPage: NextPage = () => {
                 <option value="">[ LOCATION ]</option>
                 {/* <option value="JOHOR">JOHOR</option> */}
                 {/* <option value="KEDAH">KEDAH</option> */}
-                <option value="KELANTAN">KELANTAN</option>
+                {/* <option value="KELANTAN">KELANTAN</option> */}
                 {/* <option value="MELAKA">MELAKA</option> */}
                 {/* <option value="NEGERI SEMBILAN">NEGERI SEMBILAN</option> */}
                 {/* <option value="PAHANG">PAHANG</option> */}
@@ -222,7 +222,7 @@ const ContactPage: NextPage = () => {
                 {/* <option value="TERENGGANU">TERENGGANU</option> */}
                 <option value="WP KUALA LUMPUR">WP KUALA LUMPUR</option>
                 {/* <option value="WP LABUAN">WP LABUAN</option> */}
-                <option value="WP PUTRAJAYA">WP PUTRAJAYA</option>
+                {/* <option value="WP PUTRAJAYA">WP PUTRAJAYA</option> */}
               </select>
             </div>
           </div>
@@ -233,6 +233,7 @@ const ContactPage: NextPage = () => {
               setFirstTab(true);
               setSecondTab(false);
               setThirdTab(false);
+              setState('');
             }}
             className={`${
               firstTab
@@ -247,6 +248,7 @@ const ContactPage: NextPage = () => {
               setFirstTab(false);
               setSecondTab(true);
               setThirdTab(false);
+              setState('');
             }}
             className={`${
               secondTab
